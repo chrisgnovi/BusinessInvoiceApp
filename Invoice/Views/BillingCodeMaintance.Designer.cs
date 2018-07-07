@@ -28,24 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.editExpenseCodes = new System.Windows.Forms.Button();
+            this.deleteExpenseCodes = new System.Windows.Forms.Button();
             this.browseExpenseCodeButton = new System.Windows.Forms.Button();
             this.addENewExpenseCodesButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.deleteServiceCodesButton = new System.Windows.Forms.Button();
             this.browseServiceCodes = new System.Windows.Forms.Button();
             this.AddNewServiceCodes = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // editExpenseCodes
+            // deleteExpenseCodes
             // 
-            this.editExpenseCodes.Location = new System.Drawing.Point(47, 276);
-            this.editExpenseCodes.Name = "editExpenseCodes";
-            this.editExpenseCodes.Size = new System.Drawing.Size(389, 57);
-            this.editExpenseCodes.TabIndex = 5;
-            this.editExpenseCodes.Text = "Edit Expense Codes";
-            this.editExpenseCodes.UseVisualStyleBackColor = true;
+            this.deleteExpenseCodes.Location = new System.Drawing.Point(47, 276);
+            this.deleteExpenseCodes.Name = "deleteExpenseCodes";
+            this.deleteExpenseCodes.Size = new System.Drawing.Size(389, 57);
+            this.deleteExpenseCodes.TabIndex = 5;
+            this.deleteExpenseCodes.Text = "Delete Expense Codes";
+            this.deleteExpenseCodes.UseVisualStyleBackColor = true;
+            this.deleteExpenseCodes.Click += new System.EventHandler(this.deleteExpenseCodes_Click);
             // 
             // browseExpenseCodeButton
             // 
@@ -55,6 +56,7 @@
             this.browseExpenseCodeButton.TabIndex = 4;
             this.browseExpenseCodeButton.Text = "Browse Expense Code ";
             this.browseExpenseCodeButton.UseVisualStyleBackColor = true;
+            this.browseExpenseCodeButton.Click += new System.EventHandler(this.browseExpenseCodeButton_Click);
             // 
             // addENewExpenseCodesButton
             // 
@@ -64,6 +66,7 @@
             this.addENewExpenseCodesButton.TabIndex = 3;
             this.addENewExpenseCodesButton.Text = "Add New Expense Code";
             this.addENewExpenseCodesButton.UseVisualStyleBackColor = true;
+            this.addENewExpenseCodesButton.Click += new System.EventHandler(this.addENewExpenseCodesButton_Click);
             // 
             // label1
             // 
@@ -74,14 +77,15 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Expense Codes";
             // 
-            // button1
+            // deleteServiceCodesButton
             // 
-            this.button1.Location = new System.Drawing.Point(474, 276);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(389, 57);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Edit Service Codes";
-            this.button1.UseVisualStyleBackColor = true;
+            this.deleteServiceCodesButton.Location = new System.Drawing.Point(474, 276);
+            this.deleteServiceCodesButton.Name = "deleteServiceCodesButton";
+            this.deleteServiceCodesButton.Size = new System.Drawing.Size(389, 57);
+            this.deleteServiceCodesButton.TabIndex = 9;
+            this.deleteServiceCodesButton.Text = "Delete Service Codes";
+            this.deleteServiceCodesButton.UseVisualStyleBackColor = true;
+            this.deleteServiceCodesButton.Click += new System.EventHandler(this.editServiceCodesbutton_Click);
             // 
             // browseServiceCodes
             // 
@@ -91,6 +95,7 @@
             this.browseServiceCodes.TabIndex = 8;
             this.browseServiceCodes.Text = "Browse Service Codes";
             this.browseServiceCodes.UseVisualStyleBackColor = true;
+            this.browseServiceCodes.Click += new System.EventHandler(this.browseServiceCodes_Click);
             // 
             // AddNewServiceCodes
             // 
@@ -100,6 +105,7 @@
             this.AddNewServiceCodes.TabIndex = 7;
             this.AddNewServiceCodes.Text = "Add New Service Codes";
             this.AddNewServiceCodes.UseVisualStyleBackColor = true;
+            this.AddNewServiceCodes.Click += new System.EventHandler(this.AddNewServiceCodes_Click);
             // 
             // label2
             // 
@@ -110,21 +116,22 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "Service Codes";
             // 
-            // editServiceCodes
+            // BillingCodeMaintance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(924, 377);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.deleteServiceCodesButton);
             this.Controls.Add(this.browseServiceCodes);
             this.Controls.Add(this.AddNewServiceCodes);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.editExpenseCodes);
+            this.Controls.Add(this.deleteExpenseCodes);
             this.Controls.Add(this.browseExpenseCodeButton);
             this.Controls.Add(this.addENewExpenseCodesButton);
-            this.Name = "editServiceCodes";
+            this.Name = "BillingCodeMaintance";
             this.Text = "BillingCodeMaintance";
+            this.Load += new System.EventHandler(this.BillingCodeMaintance_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,11 +139,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Button editExpenseCodes;
+        private System.Windows.Forms.Button deleteExpenseCodes;
         private System.Windows.Forms.Button browseExpenseCodeButton;
         private System.Windows.Forms.Button addENewExpenseCodesButton;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button deleteServiceCodesButton;
         private System.Windows.Forms.Button browseServiceCodes;
         private System.Windows.Forms.Button AddNewServiceCodes;
         private System.Windows.Forms.Label label2;

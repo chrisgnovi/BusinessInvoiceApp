@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Windows.Forms;
 using Invoice.Views;
 
@@ -15,6 +16,7 @@ namespace Invoice
         public Mainmenu()
         {
             InitializeComponent();
+           
 
         }
 
@@ -52,29 +54,31 @@ namespace Invoice
 
             string s = this.ClientslistBox.Text;
             Client client = clientInformation.extraData.getClient(s);
+            if (client != null)
+            {
 
-            claimNumberlabel.Text = "Claim Number: " + client.clientClaimNumber;
+                claimNumberlabel.Text = "Claim Number: " + client.clientClaimNumber;
 
-            clientNameLabel.Text = "Client: " + client.clientFirstName + " " + client.clientLastName;
-            ClientAddresslabel.Text = "Address: " + client.clientAddressLine1 + "\n               " + client.clientAddressLine2 + "\n               " + client.clientCity +
-                ", " + client.clientState + ", " + client.clientZip;
-            clientPhoneLabel.Text = "Home Phone: " + client.clientHomeNumber + "\nWork Phone: " + client.clientWorkPhone;
+                clientNameLabel.Text = "Client: " + client.clientFirstName + " " + client.clientLastName;
+                ClientAddresslabel.Text = "Address: " + client.clientAddressLine1 + "\n               " + client.clientAddressLine2 + "\n               " + client.clientCity +
+                    ", " + client.clientState + ", " + client.clientZip;
+                clientPhoneLabel.Text = "Home Phone: " + client.clientHomeNumber + "\nWork Phone: " + client.clientWorkPhone;
 
-            carrierNamelabel.Text = "Carrier: " + client.carrierName;
-            carrierAddresslabel.Text = "Address: " + client.carrierAddressLine1 + "\n               " + client.carrierAddressLine2 + "\n               " + client.carrierCity +
-                ", " + client.carrierState + ", " + client.carrierZip;
-            carrierPhonelabel.Text = "Phone: " + client.carrierPhone;
+                carrierNamelabel.Text = "Carrier: " + client.carrierName;
+                carrierAddresslabel.Text = "Address: " + client.carrierAddressLine1 + "\n               " + client.carrierAddressLine2 + "\n               " + client.carrierCity +
+                    ", " + client.carrierState + ", " + client.carrierZip;
+                carrierPhonelabel.Text = "Phone: " + client.carrierPhone;
 
-            qrcNamelabel.Text = "QRC: " + client.qrcFirstName + " " + client.qrcLastName;
-            qrcAddresslabel.Text = "Address: " + client.qrcAddressLine1 + "\n               " + client.qrcAddressLine2 + "\n               " + client.qrcCity +
-                ", " + client.qrcState + ", " + client.qrcZip;
-            qrcPhonelabel.Text = "Work Phone: " + client.qrcWorkPhone + "\nHome Phone: " + client.qrcHomePhine;
+                qrcNamelabel.Text = "QRC: " + client.qrcFirstName + " " + client.qrcLastName;
+                qrcAddresslabel.Text = "Address: " + client.qrcAddressLine1 + "\n               " + client.qrcAddressLine2 + "\n               " + client.qrcCity +
+                    ", " + client.qrcState + ", " + client.qrcZip;
+                qrcPhonelabel.Text = "Work Phone: " + client.qrcWorkPhone + "\nHome Phone: " + client.qrcHomePhine;
 
-            attroneyNamelabel.Text = "Attorney: " + client.attorneyFirstName + " " + client.attorneyLastName;
-            attorneyAddresslabel.Text = "Address: " + client.attorneyAddressLine1 + "\n               " + client.attorneyAddressLine2 + "\n               " + client.attorneyCity +
-                ", " + client.attorneyState + ", " + client.attorneyZip;
-            AttorneyPhonelabel.Text = "Work Phone: " + client.attorneyWorkNumber + "\nHome Phone: " + client.attorneyHomePhone;
-
+                attroneyNamelabel.Text = "Attorney: " + client.attorneyFirstName + " " + client.attorneyLastName;
+                attorneyAddresslabel.Text = "Address: " + client.attorneyAddressLine1 + "\n               " + client.attorneyAddressLine2 + "\n               " + client.attorneyCity +
+                    ", " + client.attorneyState + ", " + client.attorneyZip;
+                AttorneyPhonelabel.Text = "Work Phone: " + client.attorneyWorkNumber + "\nHome Phone: " + client.attorneyHomePhone;
+            }
         }
 
         private void deleteClientToolStripMenuItem_Click(object sender, EventArgs e)
@@ -115,6 +119,7 @@ namespace Invoice
         private void Mainmenu_Activated(object sender, EventArgs e)
         {
             FillListBox();
+            activityFillData();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -151,9 +156,6 @@ namespace Invoice
 
         private void addbutton_Click(object sender, EventArgs e)
         {
-            addBilling new_window = new addBilling();
-            var dialogResult = new_window.ShowDialog();
-            new_window.Dispose();
         }
 
         private void billingCodesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -212,20 +214,25 @@ namespace Invoice
         }
 
 
-        void activityFillData()
+        private void activityFillData()
         {
 
             string s = this.ClientslistBox.Text;
             Client client = clientInformation.extraData.getClient(s);
 
-            client.dTable.Columns.Add("Rec#");
-            client.dTable.Columns.Add("Date of Service");
-            client.dTable.Columns.Add("Service Description");
-            client.dTable.Columns.Add("Code");
-            client.dTable.Columns.Add("Time");
-            client.dTable.Columns.Add("Mileage");
-            client.dTable.Columns.Add("Expenses");
-            client.dTable.NewRow();
+            activityDataGridView.ColumnCount = 7;
+            activityDataGridView.Columns[0].Name = "Rec#";
+            activityDataGridView.Columns[1].Name = "Date of Service";
+            activityDataGridView.Columns[2].Name = "Service Description";
+            activityDataGridView.Columns[3].Name = "Code";
+            activityDataGridView.Columns[4].Name = "Time";
+            activityDataGridView.Columns[5].Name = "Mileage";
+            activityDataGridView.Columns[6].Name = "Discount";
+
+            ////string[] row = new string[] { client.dTable.Rows[0][0].ToString(), client.dTable.Rows[0][1].ToString(),
+            //                              client.dTable.Rows[0][2].ToString(), client.dTable.Rows[0][3].ToString(),
+            //                              client.dTable.Rows[0][4].ToString(), client.dTable.Rows[0][5].ToString(),
+            //                              client.dTable.Rows[0][6].ToString()};
 
             //activityDataGridView = client.dTable; 
         }
@@ -235,7 +242,17 @@ namespace Invoice
         private void addDailyActivity_Click(object sender, EventArgs e)
         {
 
+            string s = this.ClientslistBox.Text;
+            string[] row = new string[] { "" };
 
+
+            clientInformation.extraData.setClientdTable(s, row);
+
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
         }
     }
 }

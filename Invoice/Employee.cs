@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Invoice
 {
+    [Serializable]
     public class Employee
     {
         // Employee info

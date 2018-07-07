@@ -11,13 +11,11 @@ namespace Invoice
     [Serializable]
     public class ExtraData
     {
+        //Dictionaries of information 
         private Dictionary<string, Client> clientDictionary = new Dictionary<string, Client>();
-        private Dictionary<String, Employee> empDic = new Dictionary<string, Employee>();
-
-        //Service codes 
-        ArrayList serviceCodeAList = new ArrayList();
-        //Expense Codes 
-        ArrayList expenseCodeAList = new ArrayList();
+        private Dictionary<string, Employee> empDic = new Dictionary<string, Employee>();
+        private Dictionary<string, string> expenseCodeDic = new Dictionary<string, string>();
+        private Dictionary<string, string> serviceCodeDic = new Dictionary<string, string>();
 
         //System Information Maintence; 
         public string companyName { get; set; }
@@ -29,6 +27,120 @@ namespace Invoice
         public string zip { get; set; }
         public string phone { get; set; }
 
+        //Methods 
+        public void addExpenseCode(string key, string description)
+        {
+            // If we already had added a friend with this name
+            if (this.expenseCodeDic == null)
+            {
+                expenseCodeDic = new Dictionary<string, string>();
+                expenseCodeDic.Add(key, description);
+                MessageBox.Show("Expense Code added successfully.");
+            }
+            else
+            {
+                if (expenseCodeDic.ContainsKey(key))
+                {
+                    MessageBox.Show("You had already added " + key);
+                }
+                else
+                {
+                    expenseCodeDic.Add(key, description);
+                    MessageBox.Show("Expense Code added successfully.");
+
+                }
+            }
+            
+        }
+
+        public void RemoveExpenseCode(string key)
+        {
+            if (this.expenseCodeDic == null)
+            {
+
+                MessageBox.Show("No expense codes in system.");
+
+            }
+            else
+            {
+
+                if (!this.expenseCodeDic.ContainsKey(key))
+                {
+                    MessageBox.Show(key + " had not been added before.");
+                }
+
+                else
+                {
+                    if (this.expenseCodeDic.Remove(key))
+                    {
+                        MessageBox.Show(key + " had been removed successfully.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Unable to remove " + key);
+                    }
+                }
+            }
+
+            
+        }
+
+        public void addServiceCode(string key, string description)
+        {
+            // If we already had added a friend with this name
+            if (this.expenseCodeDic == null)
+            {
+                serviceCodeDic = new Dictionary<string, string>();
+                serviceCodeDic.Add(key, description);
+                MessageBox.Show("Expense Code added successfully.");
+            }
+            else
+            {
+                if (serviceCodeDic.ContainsKey(key))
+                {
+                    MessageBox.Show("You had already added " + key);
+                }
+                else
+                {
+                    serviceCodeDic.Add(key, description);
+                    MessageBox.Show("Expense Code added successfully.");
+
+                }
+            }
+
+        }
+
+        public void RemoveServiceCode(string key)
+        {
+            if (this.serviceCodeDic == null)
+            {
+
+                MessageBox.Show("No service codes in system.");
+
+            }
+            else
+            {
+
+                if (!this.serviceCodeDic.ContainsKey(key))
+                {
+                    MessageBox.Show(key + " had not been added before.");
+                }
+
+                else
+                {
+                    if (this.serviceCodeDic.Remove(key))
+                    {
+                        MessageBox.Show(key + " had been removed successfully.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Unable to remove " + key);
+                    }
+                }
+            }
+
+
+        }
 
         public void addEmployee(string name, Employee emp)
         {
@@ -41,7 +153,7 @@ namespace Invoice
             else
             {
                 this.empDic.Add(name, emp);
-                MessageBox.Show("Client added successfully.");
+                MessageBox.Show("Employee added successfully.");
 
             }
         }
@@ -83,7 +195,6 @@ namespace Invoice
             }
         }
 
-
         public void RemoveClient(string name)
         {
 
@@ -105,11 +216,18 @@ namespace Invoice
             }
         }
 
-
         public List<string> ClientList()
         {
 
             List<string> keyList = new List<string>(this.clientDictionary.Keys);
+
+            return keyList;
+        }
+
+        public List<string> EmployeeList()
+        {
+
+            List<string> keyList = new List<string>(this.empDic.Keys);
 
             return keyList;
         }
@@ -125,6 +243,27 @@ namespace Invoice
 
         }
 
+        public Employee getEmployee(string key)
+        {
+            if (empDic.ContainsKey(key))
+            {
+                Employee val = empDic[key];
+                return val;
+            }
+            return null;
+
+        }
+
+        public void setClientdTable(string key, string[] row)
+        {
+            if (clientDictionary.ContainsKey(key))
+            {
+                clientDictionary[key].dTable.Rows.Add(row);
+                
+            }
+           
+
+        }
 
         public void Print()
         {

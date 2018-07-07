@@ -16,5 +16,52 @@ namespace Invoice.Views
         {
             InitializeComponent();
         }
+
+        private void BillingCodeMaintance_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addENewExpenseCodesButton_Click(object sender, EventArgs e)
+        {
+            addNewExpenseCodes new_window = new addNewExpenseCodes();
+            var dialogResult = new_window.ShowDialog();
+            new_window.Dispose();
+        }
+
+        private void browseExpenseCodeButton_Click(object sender, EventArgs e)
+        {
+            BrowseExpenseCode new_window = new BrowseExpenseCode();
+            var dialogResult = new_window.ShowDialog();
+            new_window.Dispose();
+        }
+
+        private void AddNewServiceCodes_Click(object sender, EventArgs e)
+        {
+            addNewServiceCode new_window = new addNewServiceCode();
+            var dialogResult = new_window.ShowDialog();
+            new_window.Dispose();
+        }
+
+        private void browseServiceCodes_Click(object sender, EventArgs e)
+        {
+            BrowseServiceCodes new_window = new BrowseServiceCodes();
+            var dialogResult = new_window.ShowDialog();
+            new_window.Dispose();
+        }
+
+        private void editServiceCodesbutton_Click(object sender, EventArgs e)
+        {
+            DeleteServiceCodes new_window = new DeleteServiceCodes();
+            var dialogResult = new_window.ShowDialog();
+            new_window.Dispose();
+        }
+
+        private void deleteExpenseCodes_Click(object sender, EventArgs e)
+        {
+            DeleteExpenseCodes new_window = new DeleteExpenseCodes();
+            var dialogResult = new_window.ShowDialog();
+            new_window.Dispose();
+        }
     }
 }

@@ -10,11 +10,31 @@ namespace Invoice
     [Serializable]
     public class Client
     {
+        public DataTable dTable = new DataTable(); // = new DataTable();
+        
 
-        // Data Table 
-        public DataTable dTable = new DataTable();
-        
-        
+        public Client()
+        {
+            //makeDataTable();
+        }
+
+
+        public DataTable GetTable()
+        {
+
+            dTable = new DataTable();
+            dTable.Columns.Add("Rec#", typeof(string));
+            dTable.Columns.Add("Date of Service", typeof(string));
+            dTable.Columns.Add("Service Description", typeof(string));
+            dTable.Columns.Add("Code", typeof(string));
+            dTable.Columns.Add("Time", typeof(string));
+            dTable.Columns.Add("Mileage", typeof(string));
+            dTable.Columns.Add("Discount", typeof(string));
+            dTable.Rows.Add("1", "2", "3", "4", "5", "6");
+
+            return dTable;
+           
+        }
 
         // File info
         public string fileNumber { get; set; }

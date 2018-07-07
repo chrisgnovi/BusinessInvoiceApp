@@ -68,12 +68,13 @@ namespace Invoice
             this.clientNameLabel = new System.Windows.Forms.Label();
             this.clientPhoneLabel = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.activityMileageTextBox = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.activityDiscountTextBox = new System.Windows.Forms.TextBox();
             this.activityBillingCodeComboBox = new System.Windows.Forms.ComboBox();
@@ -104,8 +105,8 @@ namespace Invoice
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.activityMileageTextBox = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -153,7 +154,7 @@ namespace Invoice
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(276, 46);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(396, 46);
             this.newToolStripMenuItem.Text = "New Client";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.NewToolStripMenuItem_Click);
             // 
@@ -457,7 +458,6 @@ namespace Invoice
             // 
             this.tabPage2.AllowDrop = true;
             this.tabPage2.AutoScroll = true;
-            this.tabPage2.Controls.Add(this.groupBox7);
             this.tabPage2.Controls.Add(this.groupBox3);
             this.tabPage2.Controls.Add(this.groupBox2);
             this.tabPage2.Controls.Add(this.groupBox1);
@@ -470,30 +470,21 @@ namespace Invoice
             this.tabPage2.Text = "Activity Log";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // groupBox7
-            // 
-            this.groupBox7.Location = new System.Drawing.Point(807, 938);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(1175, 241);
-            this.groupBox7.TabIndex = 10;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Edit Daily Activity";
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.comboBox2);
-            this.groupBox3.Location = new System.Drawing.Point(15, 938);
+            this.groupBox3.Location = new System.Drawing.Point(1641, 676);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(688, 241);
+            this.groupBox3.Size = new System.Drawing.Size(354, 444);
             this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Delete Daily Activity";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(373, 83);
+            this.button2.Location = new System.Drawing.Point(31, 333);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(285, 85);
             this.button2.TabIndex = 5;
@@ -503,7 +494,7 @@ namespace Invoice
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(24, 61);
+            this.label5.Location = new System.Drawing.Point(24, 63);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(168, 32);
             this.label5.TabIndex = 4;
@@ -519,6 +510,8 @@ namespace Invoice
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.activityMileageTextBox);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label6);
@@ -532,10 +525,26 @@ namespace Invoice
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Location = new System.Drawing.Point(18, 676);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1977, 200);
+            this.groupBox2.Size = new System.Drawing.Size(1450, 444);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Add Daily Activity";
+            // 
+            // activityMileageTextBox
+            // 
+            this.activityMileageTextBox.Location = new System.Drawing.Point(1257, 115);
+            this.activityMileageTextBox.Name = "activityMileageTextBox";
+            this.activityMileageTextBox.Size = new System.Drawing.Size(168, 38);
+            this.activityMileageTextBox.TabIndex = 11;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(1251, 55);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(171, 32);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "Mileage (mi)";
             // 
             // label6
             // 
@@ -563,7 +572,7 @@ namespace Invoice
             // 
             // AddDailyActivityButton
             // 
-            this.AddDailyActivityButton.Location = new System.Drawing.Point(1632, 71);
+            this.AddDailyActivityButton.Location = new System.Drawing.Point(1137, 333);
             this.AddDailyActivityButton.Name = "AddDailyActivityButton";
             this.AddDailyActivityButton.Size = new System.Drawing.Size(285, 85);
             this.AddDailyActivityButton.TabIndex = 1;
@@ -585,9 +594,9 @@ namespace Invoice
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(24, 55);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(256, 32);
+            this.label2.Size = new System.Drawing.Size(169, 32);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Select Billing Code";
+            this.label2.Text = "Billing Code";
             // 
             // activityTimeTextBox
             // 
@@ -608,9 +617,10 @@ namespace Invoice
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(306, 55);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(256, 32);
+            this.label3.Size = new System.Drawing.Size(75, 32);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Select Billing Code";
+            this.label3.Text = "Date";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // groupBox1
             // 
@@ -803,21 +813,22 @@ namespace Invoice
             this.label10.TabIndex = 5;
             this.label10.Text = "Company Name";
             // 
-            // label11
+            // label12
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(1251, 55);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(171, 32);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "Mileage (mi)";
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(24, 180);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(260, 32);
+            this.label12.TabIndex = 12;
+            this.label12.Text = "Service Description";
             // 
-            // activityMileageTextBox
+            // textBox1
             // 
-            this.activityMileageTextBox.Location = new System.Drawing.Point(1257, 115);
-            this.activityMileageTextBox.Name = "activityMileageTextBox";
-            this.activityMileageTextBox.Size = new System.Drawing.Size(168, 38);
-            this.activityMileageTextBox.TabIndex = 11;
+            this.textBox1.Location = new System.Drawing.Point(30, 216);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(979, 202);
+            this.textBox1.TabIndex = 13;
             // 
             // Mainmenu
             // 
@@ -935,7 +946,6 @@ namespace Invoice
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private GroupBox groupBox7;
         private GroupBox groupBox6;
         private Label label10;
         private ToolStripMenuItem editClientInformationToolStripMenuItem;
@@ -946,6 +956,8 @@ namespace Invoice
         private Button button4;
         private TextBox activityMileageTextBox;
         private Label label11;
+        private TextBox textBox1;
+        private Label label12;
     }
 }
 

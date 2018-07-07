@@ -37,9 +37,10 @@ namespace Invoice
             new_window.Dispose();
         }
 
-        private void editEmployeeRecords_Click(object sender, EventArgs e)
+
+        private void deleteEmployeeRecords_Click(object sender, EventArgs e)
         {
-            EditEmployeeRecords new_window = new EditEmployeeRecords();
+            DeleteEmployeeRecords new_window = new DeleteEmployeeRecords();
             var dialogResult = new_window.ShowDialog();
             new_window.Dispose();
         }

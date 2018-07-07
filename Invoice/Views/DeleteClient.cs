@@ -47,6 +47,8 @@ namespace Invoice
         {
             string s = this.deleteClientComboBox.Text;
             clientInformation.extraData.RemoveClient(s);
+            clientInformation.Save();
+            this.Refresh();
         }
 
         private void label1_Click(object sender, EventArgs e)

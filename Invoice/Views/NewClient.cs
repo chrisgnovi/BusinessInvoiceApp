@@ -34,6 +34,7 @@ namespace Invoice
             client.difficultyRating = difficultyRatingTextBox.Text;
             client.suspendInvoice = suspendInvoiceTextBox.Text;
 
+
             // Client info
             client.clientFirstName = clientFirstNameTextBox.Text;
             client.clientLastName = clientLastNameTextBox.Text;

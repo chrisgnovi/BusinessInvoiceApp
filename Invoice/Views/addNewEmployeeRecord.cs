@@ -45,8 +45,11 @@ namespace Invoice.Views
             employee.state = employeeStateTextBox.Text;
             employee.phone = employeePhoneTextBox.Text;
 
+            ClientInformation clientInformation = ClientInformation.Instance();
 
-            
+            clientInformation.extraData.addEmployee(employee.firstName, employee);
+            clientInformation.Save();
+
             this.Refresh();
 
             this.Close();

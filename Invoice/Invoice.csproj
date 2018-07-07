@@ -52,18 +52,24 @@
     <Compile Include="Views\About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\addBilling.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\addBilling.Designer.cs">
-      <DependentUpon>addBilling.cs</DependentUpon>
-    </Compile>
     <Compile Include="Employee.cs" />
     <Compile Include="Views\addNewEmployeeRecord.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\addNewEmployeeRecord.Designer.cs">
       <DependentUpon>addNewEmployeeRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\addNewExpenseCodes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\addNewExpenseCodes.Designer.cs">
+      <DependentUpon>addNewExpenseCodes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\addNewServiceCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\addNewServiceCode.Designer.cs">
+      <DependentUpon>addNewServiceCode.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\BillingCodeMaintance.cs">
       <SubType>Form</SubType>
@@ -77,11 +83,35 @@
     <Compile Include="Views\BrowseEmployeeRecords.Designer.cs">
       <DependentUpon>BrowseEmployeeRecords.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\EditEmployeeRecords.cs">
+    <Compile Include="Views\BrowseExpenseCode.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\EditEmployeeRecords.Designer.cs">
-      <DependentUpon>EditEmployeeRecords.cs</DependentUpon>
+    <Compile Include="Views\BrowseExpenseCode.Designer.cs">
+      <DependentUpon>BrowseExpenseCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BrowseServiceCodes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\BrowseServiceCodes.Designer.cs">
+      <DependentUpon>BrowseServiceCodes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DeleteEmployeeRecords.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DeleteEmployeeRecords.Designer.cs">
+      <DependentUpon>DeleteEmployeeRecords.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DeleteExpenseCodes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DeleteExpenseCodes.Designer.cs">
+      <DependentUpon>DeleteExpenseCodes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DeleteServiceCodes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DeleteServiceCodes.Designer.cs">
+      <DependentUpon>DeleteServiceCodes.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\employeeRecordMaintentance.cs">
       <SubType>Form</SubType>
@@ -126,17 +156,23 @@
     <EmbeddedResource Include="Views\About.resx">
       <DependentUpon>About.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\addBilling.resx">
-      <DependentUpon>addBilling.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\addNewEmployeeRecord.resx">
       <DependentUpon>addNewEmployeeRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\addNewExpenseCodes.resx">
+      <DependentUpon>addNewExpenseCodes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\BillingCodeMaintance.resx">
       <DependentUpon>BillingCodeMaintance.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\BrowseEmployeeRecords.resx">
+      <DependentUpon>BrowseEmployeeRecords.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\DeleteClient.resx">
       <DependentUpon>DeleteClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DeleteEmployeeRecords.resx">
+      <DependentUpon>DeleteEmployeeRecords.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\EditClient.resx">
       <DependentUpon>EditClient.cs</DependentUpon>

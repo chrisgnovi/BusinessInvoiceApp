@@ -10,34 +10,32 @@ using System.Windows.Forms;
 
 namespace Invoice.Views
 {
-    public partial class BrowseEmployeeRecords : Form
+    public partial class DeleteEmployeeRecords : Form
     {
-
         ClientInformation clientInformation = ClientInformation.Instance();
 
-        public BrowseEmployeeRecords()
+        public DeleteEmployeeRecords()
         {
             InitializeComponent();
         }
 
+        private void employeeComboBox_Click(object sender, EventArgs e)
+        {
+
+        }
 
         private void FillListBox()
         {
-           employeeComboBox.Items.Clear();
+            employeeComboBox.Items.Clear();
             foreach (string s in clientInformation.extraData.EmployeeList())
             {
                 employeeComboBox.Items.Add(s);
             }
         }
 
-        private void BrowseEmployeeRecords_Activated(object sender, EventArgs e)
-        {
-            FillListBox();
-        }
 
-        private void employeeComboBox_Click(object sender, EventArgs e)
+        private void deleteButton_Click(object sender, EventArgs e)
         {
-            
             string s = this.employeeComboBox.Text;
 
             if (s != null)
@@ -46,14 +44,16 @@ namespace Invoice.Views
 
                 if (empy != null)
                 {
-
-                    employeeNameLabel.Text = "Employee: " + empy.firstName + " " + empy.lastName;
-                    employeeAddresslabel.Text = "Address: " + empy.addressLine1 + "\n" + empy.addressLine2 + "\n" + empy.city + ", " + empy.state + ", " + empy.zip;
-                    employeePhoneLabel.Text = "Phone: " + empy.phone;
+                    clientInformation.extraData.RemoveEmployeee(s);
+                    clientInformation.Save();
+                    this.Refresh();
                 }
             }
+        }
 
+        private void DeleteEmployeeRecords_Activated(object sender, EventArgs e)
+        {
+            FillListBox();
         }
     }
-
 }
