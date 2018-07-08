@@ -232,6 +232,22 @@ namespace Invoice
             return keyList;
         }
 
+        public List<string> ServiceCodesList()
+        {
+
+            List<string> keyList = new List<string>(this.serviceCodeDic.Keys);
+
+            return keyList;
+        }
+
+        public List<string> ExpenseCodesList()
+        {
+
+            List<string> keyList = new List<string>(this.expenseCodeDic.Keys);
+
+            return keyList;
+        }
+
         public Client getClient(string key)
         {
             if (clientDictionary.ContainsKey(key))
@@ -252,6 +268,16 @@ namespace Invoice
             }
             return null;
 
+        }
+
+        public Dictionary<string, string> getExpenseCodes()
+        {
+            return expenseCodeDic;
+        }
+
+        public Dictionary<string, string> getServiceCodes()
+        {
+            return serviceCodeDic;
         }
 
         public void setClientdTable(string key, string[] row)

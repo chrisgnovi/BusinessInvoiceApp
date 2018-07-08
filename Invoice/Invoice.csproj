@@ -162,17 +162,32 @@
     <EmbeddedResource Include="Views\addNewExpenseCodes.resx">
       <DependentUpon>addNewExpenseCodes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\addNewServiceCode.resx">
+      <DependentUpon>addNewServiceCode.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\BillingCodeMaintance.resx">
       <DependentUpon>BillingCodeMaintance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\BrowseEmployeeRecords.resx">
       <DependentUpon>BrowseEmployeeRecords.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\BrowseExpenseCode.resx">
+      <DependentUpon>BrowseExpenseCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\BrowseServiceCodes.resx">
+      <DependentUpon>BrowseServiceCodes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\DeleteClient.resx">
       <DependentUpon>DeleteClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\DeleteEmployeeRecords.resx">
       <DependentUpon>DeleteEmployeeRecords.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DeleteExpenseCodes.resx">
+      <DependentUpon>DeleteExpenseCodes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DeleteServiceCodes.resx">
+      <DependentUpon>DeleteServiceCodes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\EditClient.resx">
       <DependentUpon>EditClient.cs</DependentUpon>

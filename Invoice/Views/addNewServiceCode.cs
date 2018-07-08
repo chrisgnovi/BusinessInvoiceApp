@@ -12,9 +12,22 @@ namespace Invoice.Views
 {
     public partial class addNewServiceCode : Form
     {
+        ClientInformation clientInformation = ClientInformation.Instance();
+
         public addNewServiceCode()
         {
             InitializeComponent();
+        }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            if (serviceCodeTextBox != null && descriptionTextBox != null)
+            {
+
+                string EC = serviceCodeTextBox.Text;
+                string DS = descriptionTextBox.Text;
+                clientInformation.extraData.addServiceCode(EC, DS);
+            }
         }
     }
 }
