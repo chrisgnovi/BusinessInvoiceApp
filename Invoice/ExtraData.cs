@@ -289,11 +289,13 @@ namespace Invoice
         }
 
 
-        public void addRowClientDataTable(string key, string[] row)
+        public void addRowClientDataTable(string key, DateTime dt, string disc, string code, double time, double mil, double dis)
         {
             if (clientDictionary.ContainsKey(key))
             {
-                clientDictionary[key].dTable.Rows.Add(row);
+                clientDictionary[key].recNumber += 1;
+                clientDictionary[key].dTable.Rows.Add(clientDictionary[key].recNumber, dt, disc, code, time, mil, dis);
+
             }
 
         }

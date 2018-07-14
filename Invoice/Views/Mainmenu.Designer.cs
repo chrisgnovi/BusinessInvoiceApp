@@ -73,7 +73,7 @@ namespace Invoice
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.activityServiceDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.activityMileageTextBox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -282,7 +282,6 @@ namespace Invoice
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Info";
             this.tabPage1.UseVisualStyleBackColor = true;
-
             // 
             // groupBox11
             // 
@@ -532,7 +531,7 @@ namespace Invoice
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.activityServiceDescriptionTextBox);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.activityMileageTextBox);
             this.groupBox2.Controls.Add(this.label11);
@@ -554,14 +553,14 @@ namespace Invoice
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Add Daily Activity";
             // 
-            // textBox1
+            // activityServiceDescriptionTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(11, 91);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(1);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(370, 87);
-            this.textBox1.TabIndex = 13;
+            this.activityServiceDescriptionTextBox.Location = new System.Drawing.Point(11, 91);
+            this.activityServiceDescriptionTextBox.Margin = new System.Windows.Forms.Padding(1);
+            this.activityServiceDescriptionTextBox.Multiline = true;
+            this.activityServiceDescriptionTextBox.Name = "activityServiceDescriptionTextBox";
+            this.activityServiceDescriptionTextBox.Size = new System.Drawing.Size(370, 87);
+            this.activityServiceDescriptionTextBox.TabIndex = 13;
             // 
             // label12
             // 
@@ -708,7 +707,7 @@ namespace Invoice
             this.tabPage3.Margin = new System.Windows.Forms.Padding(1);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(1);
-            this.tabPage3.Size = new System.Drawing.Size(741, 655);
+            this.tabPage3.Size = new System.Drawing.Size(796, 500);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Invoice";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1009,7 +1008,7 @@ namespace Invoice
         private Button button4;
         private TextBox activityMileageTextBox;
         private Label label11;
-        private TextBox textBox1;
+        private TextBox activityServiceDescriptionTextBox;
         private Label label12;
     }
 }

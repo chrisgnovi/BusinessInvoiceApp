@@ -10,6 +10,9 @@ namespace Invoice
     [Serializable]
     public class Client
     {
+        // Rec #
+        public int recNumber;
+
         public DataTable dTable;
         
         public DataTable Instance()
@@ -17,13 +20,13 @@ namespace Invoice
             if (dTable == null)
             {
                 dTable = new DataTable();
-                dTable.Columns.Add("Rec#", typeof(string));
-                dTable.Columns.Add("Date of Service", typeof(string));
+                dTable.Columns.Add("Rec#", typeof(int));
+                dTable.Columns.Add("Date of Service", typeof(DateTime));
                 dTable.Columns.Add("Service Description", typeof(string));
                 dTable.Columns.Add("Code", typeof(string));
-                dTable.Columns.Add("Time", typeof(string));
-                dTable.Columns.Add("Mileage", typeof(string));
-                dTable.Columns.Add("Discount", typeof(string));
+                dTable.Columns.Add("Time", typeof(double));
+                dTable.Columns.Add("Mileage", typeof(double));
+                dTable.Columns.Add("Discount", typeof(double));
                 return dTable;
             }
 
@@ -37,7 +40,7 @@ namespace Invoice
             //makeDataTable();
         }
 
-
+        
        
         // File info
         public string fileNumber { get; set; }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Data;
 using System.Windows.Forms;
 using Invoice.Views;
@@ -158,9 +159,16 @@ namespace Invoice
         {
 
             string s = this.ClientslistBox.Text;
-            string[] row = new string[] { activityBillingCodeComboBox.Text, "7/14/17", activityTimeTextBox.Text, activityDiscountTextBox.Text, activityMileageTextBox.Text };
+            ArrayList row = new ArrayList();
 
-            clientInformation.extraData.addRowClientDataTable(s, row);
+            DateTime dt = activityDateTimePicker.Value;
+            string disc = activityServiceDescriptionTextBox.Text;
+            string code = activityBillingCodeComboBox.Text;
+            double time = Convert.ToDouble(activityTimeTextBox.Text); 
+            double mil = Convert.ToDouble(activityMileageTextBox.Text);
+            double dis = Convert.ToDouble(activityDiscountTextBox.Text);
+
+            clientInformation.extraData.addRowClientDataTable(s, dt, disc, code, time, mil, dis);
 
         }
 
