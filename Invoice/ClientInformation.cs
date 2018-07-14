@@ -36,8 +36,7 @@ namespace Invoice
             this.extraData = new ExtraData();
             this.formatter = new BinaryFormatter();
         }
-
-        
+      
         public void Save()
         {
             // Gain code access to the file 

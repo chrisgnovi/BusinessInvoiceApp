@@ -9,18 +9,17 @@ namespace Invoice
     {
         ClientInformation clientInformation = ClientInformation.Instance();
 
-
-
-
-
         public Mainmenu()
         {
             InitializeComponent();
-           
-
         }
 
-
+        private void Mainmenu_Activated(object sender, EventArgs e)
+        {
+            FillListBox();
+            activityFillData();
+            FillCodeBox();
+        }
 
         private void NewToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -46,6 +45,15 @@ namespace Invoice
             foreach (string s in clientInformation.extraData.ClientList())
             {
                 ClientslistBox.Items.Add(s);
+            }
+        }
+
+        private void FillCodeBox()
+        {
+            activityBillingCodeComboBox.Items.Clear();
+            foreach (string s in clientInformation.extraData.ServiceCodesList())
+            {
+                activityBillingCodeComboBox.Items.Add(s);
             }
         }
 
@@ -79,6 +87,10 @@ namespace Invoice
                     ", " + client.attorneyState + ", " + client.attorneyZip;
                 AttorneyPhonelabel.Text = "Work Phone: " + client.attorneyWorkNumber + "\nHome Phone: " + client.attorneyHomePhone;
             }
+
+            DataTable dt = clientInformation.extraData.getClientDataTable(s);
+            this.activityDataGridView.DataSource = dt;
+
         }
 
         private void deleteClientToolStripMenuItem_Click(object sender, EventArgs e)
@@ -88,85 +100,7 @@ namespace Invoice
             new_window.Dispose();
         }
 
-        private void addBill_Click(object sender, EventArgs e)
-        {
 
-        }
-
-
-
-
-        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fileToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void clientStatusToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Mainmenu_Activated(object sender, EventArgs e)
-        {
-            FillListBox();
-            activityFillData();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        private void ClientslistBox_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AttorneyPhonelabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Mainmenu_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void addbutton_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void billingCodesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void editToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void employeeRecordMaintentanceToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -194,10 +128,6 @@ namespace Invoice
 
         }
 
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void editClientInformationToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -220,39 +150,19 @@ namespace Invoice
             string s = this.ClientslistBox.Text;
             Client client = clientInformation.extraData.getClient(s);
 
-            activityDataGridView.ColumnCount = 7;
-            activityDataGridView.Columns[0].Name = "Rec#";
-            activityDataGridView.Columns[1].Name = "Date of Service";
-            activityDataGridView.Columns[2].Name = "Service Description";
-            activityDataGridView.Columns[3].Name = "Code";
-            activityDataGridView.Columns[4].Name = "Time";
-            activityDataGridView.Columns[5].Name = "Mileage";
-            activityDataGridView.Columns[6].Name = "Discount";
-
-            ////string[] row = new string[] { client.dTable.Rows[0][0].ToString(), client.dTable.Rows[0][1].ToString(),
-            //                              client.dTable.Rows[0][2].ToString(), client.dTable.Rows[0][3].ToString(),
-            //                              client.dTable.Rows[0][4].ToString(), client.dTable.Rows[0][5].ToString(),
-            //                              client.dTable.Rows[0][6].ToString()};
-
-            //activityDataGridView = client.dTable; 
+       
         }
 
-        
 
         private void addDailyActivity_Click(object sender, EventArgs e)
         {
 
             string s = this.ClientslistBox.Text;
-            string[] row = new string[] { "" };
+            string[] row = new string[] { activityBillingCodeComboBox.Text, "7/14/17", activityTimeTextBox.Text, activityDiscountTextBox.Text, activityMileageTextBox.Text };
 
-
-            clientInformation.extraData.setClientdTable(s, row);
-
+            clientInformation.extraData.addRowClientDataTable(s, row);
 
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-        }
     }
 }

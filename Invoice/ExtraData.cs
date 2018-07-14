@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
 using System.Windows.Forms;
+using System.Data;
 
 namespace Invoice
 {
@@ -190,6 +191,7 @@ namespace Invoice
             else
             {
                 this.clientDictionary.Add(name, client);
+                this.clientDictionary[name].Instance();
                 MessageBox.Show("Client added successfully.");
 
             }
@@ -248,6 +250,7 @@ namespace Invoice
             return keyList;
         }
 
+
         public Client getClient(string key)
         {
             if (clientDictionary.ContainsKey(key))
@@ -278,6 +281,30 @@ namespace Invoice
         public Dictionary<string, string> getServiceCodes()
         {
             return serviceCodeDic;
+        }
+
+        public DataTable getClientDataTable(string key)
+        {
+            return getClient(key).dTable;
+        }
+
+
+        public void addRowClientDataTable(string key, string[] row)
+        {
+            if (clientDictionary.ContainsKey(key))
+            {
+                clientDictionary[key].dTable.Rows.Add(row);
+            }
+
+        }
+
+        public void addCloumnClientDataTable(string key, string col, object type )
+        {
+            if (clientDictionary.ContainsKey(key))
+            {
+                clientDictionary[key].dTable.Columns.Add(col,type.GetType());
+            }
+
         }
 
         public void setClientdTable(string key, string[] row)
