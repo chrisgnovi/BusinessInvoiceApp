@@ -34,6 +34,7 @@ namespace Invoice
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editClientInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,9 +70,9 @@ namespace Invoice
             this.clientPhoneLabel = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.deleteDailyActivity = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.deleteRecNumberComboBox = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.activityServiceDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -92,21 +93,17 @@ namespace Invoice
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.generateInvoiceButton = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+            this.invoiceDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.endingDateActivityDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.startingDateActivtyDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.invoiceDataGridView = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
+            this.deleteDailyActivityTextBox = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -123,7 +120,7 @@ namespace Invoice
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoiceDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -144,17 +141,26 @@ namespace Invoice
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newToolStripMenuItem});
+            this.newToolStripMenuItem,
+            this.saveToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 22);
             this.fileToolStripMenuItem.Text = "File";
+            this.fileToolStripMenuItem.Click += new System.EventHandler(this.fileToolStripMenuItem_Click);
             // 
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newToolStripMenuItem.Text = "New Client";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.NewToolStripMenuItem_Click);
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -488,9 +494,10 @@ namespace Invoice
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button2);
+            this.groupBox3.Controls.Add(this.deleteDailyActivityTextBox);
+            this.groupBox3.Controls.Add(this.deleteDailyActivity);
             this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.comboBox2);
+            this.groupBox3.Controls.Add(this.deleteRecNumberComboBox);
             this.groupBox3.Location = new System.Drawing.Point(615, 283);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(1);
             this.groupBox3.Name = "groupBox3";
@@ -500,15 +507,16 @@ namespace Invoice
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Delete Daily Activity";
             // 
-            // button2
+            // deleteDailyActivity
             // 
-            this.button2.Location = new System.Drawing.Point(12, 140);
-            this.button2.Margin = new System.Windows.Forms.Padding(1);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(107, 36);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Delete Daily Activity ";
-            this.button2.UseVisualStyleBackColor = true;
+            this.deleteDailyActivity.Location = new System.Drawing.Point(12, 140);
+            this.deleteDailyActivity.Margin = new System.Windows.Forms.Padding(1);
+            this.deleteDailyActivity.Name = "deleteDailyActivity";
+            this.deleteDailyActivity.Size = new System.Drawing.Size(107, 36);
+            this.deleteDailyActivity.TabIndex = 5;
+            this.deleteDailyActivity.Text = "Delete Daily Activity ";
+            this.deleteDailyActivity.UseVisualStyleBackColor = true;
+            this.deleteDailyActivity.Click += new System.EventHandler(this.deleteDailyActivity_Click);
             // 
             // label5
             // 
@@ -520,14 +528,14 @@ namespace Invoice
             this.label5.TabIndex = 4;
             this.label5.Text = "Select Rec#";
             // 
-            // comboBox2
+            // deleteRecNumberComboBox
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(11, 49);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(1);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(110, 21);
-            this.comboBox2.TabIndex = 0;
+            this.deleteRecNumberComboBox.FormattingEnabled = true;
+            this.deleteRecNumberComboBox.Location = new System.Drawing.Point(12, 75);
+            this.deleteRecNumberComboBox.Margin = new System.Windows.Forms.Padding(1);
+            this.deleteRecNumberComboBox.Name = "deleteRecNumberComboBox";
+            this.deleteRecNumberComboBox.Size = new System.Drawing.Size(110, 21);
+            this.deleteRecNumberComboBox.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -736,13 +744,13 @@ namespace Invoice
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.button3);
+            this.groupBox5.Controls.Add(this.generateInvoiceButton);
             this.groupBox5.Controls.Add(this.label9);
-            this.groupBox5.Controls.Add(this.dateTimePicker4);
+            this.groupBox5.Controls.Add(this.invoiceDateDateTimePicker);
             this.groupBox5.Controls.Add(this.label8);
             this.groupBox5.Controls.Add(this.label7);
-            this.groupBox5.Controls.Add(this.dateTimePicker3);
-            this.groupBox5.Controls.Add(this.dateTimePicker2);
+            this.groupBox5.Controls.Add(this.endingDateActivityDateTimePicker);
+            this.groupBox5.Controls.Add(this.startingDateActivtyDateTimePicker);
             this.groupBox5.Location = new System.Drawing.Point(10, 14);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(1);
             this.groupBox5.Name = "groupBox5";
@@ -752,15 +760,16 @@ namespace Invoice
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Generate Inovice";
             // 
-            // button3
+            // generateInvoiceButton
             // 
-            this.button3.Location = new System.Drawing.Point(614, 33);
-            this.button3.Margin = new System.Windows.Forms.Padding(1);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(110, 31);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Generate Invoice";
-            this.button3.UseVisualStyleBackColor = true;
+            this.generateInvoiceButton.Location = new System.Drawing.Point(614, 33);
+            this.generateInvoiceButton.Margin = new System.Windows.Forms.Padding(1);
+            this.generateInvoiceButton.Name = "generateInvoiceButton";
+            this.generateInvoiceButton.Size = new System.Drawing.Size(110, 31);
+            this.generateInvoiceButton.TabIndex = 6;
+            this.generateInvoiceButton.Text = "Generate Invoice";
+            this.generateInvoiceButton.UseVisualStyleBackColor = true;
+            this.generateInvoiceButton.Click += new System.EventHandler(this.generateInvoiceButton_Click);
             // 
             // label9
             // 
@@ -773,14 +782,14 @@ namespace Invoice
             this.label9.Text = "Invoice Date";
             this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // dateTimePicker4
+            // invoiceDateDateTimePicker
             // 
-            this.dateTimePicker4.Location = new System.Drawing.Point(410, 48);
-            this.dateTimePicker4.Margin = new System.Windows.Forms.Padding(1);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(189, 20);
-            this.dateTimePicker4.TabIndex = 4;
-            this.dateTimePicker4.ValueChanged += new System.EventHandler(this.dateTimePicker4_ValueChanged);
+            this.invoiceDateDateTimePicker.Location = new System.Drawing.Point(410, 48);
+            this.invoiceDateDateTimePicker.Margin = new System.Windows.Forms.Padding(1);
+            this.invoiceDateDateTimePicker.Name = "invoiceDateDateTimePicker";
+            this.invoiceDateDateTimePicker.Size = new System.Drawing.Size(189, 20);
+            this.invoiceDateDateTimePicker.TabIndex = 4;
+            this.invoiceDateDateTimePicker.ValueChanged += new System.EventHandler(this.dateTimePicker4_ValueChanged);
             // 
             // label8
             // 
@@ -802,25 +811,25 @@ namespace Invoice
             this.label7.TabIndex = 2;
             this.label7.Text = "Starting Date Activity";
             // 
-            // dateTimePicker3
+            // endingDateActivityDateTimePicker
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(213, 48);
-            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(1);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(187, 20);
-            this.dateTimePicker3.TabIndex = 1;
+            this.endingDateActivityDateTimePicker.Location = new System.Drawing.Point(213, 48);
+            this.endingDateActivityDateTimePicker.Margin = new System.Windows.Forms.Padding(1);
+            this.endingDateActivityDateTimePicker.Name = "endingDateActivityDateTimePicker";
+            this.endingDateActivityDateTimePicker.Size = new System.Drawing.Size(187, 20);
+            this.endingDateActivityDateTimePicker.TabIndex = 1;
             // 
-            // dateTimePicker2
+            // startingDateActivtyDateTimePicker
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(10, 48);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(1);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(194, 20);
-            this.dateTimePicker2.TabIndex = 0;
+            this.startingDateActivtyDateTimePicker.Location = new System.Drawing.Point(10, 48);
+            this.startingDateActivtyDateTimePicker.Margin = new System.Windows.Forms.Padding(1);
+            this.startingDateActivtyDateTimePicker.Name = "startingDateActivtyDateTimePicker";
+            this.startingDateActivtyDateTimePicker.Size = new System.Drawing.Size(194, 20);
+            this.startingDateActivtyDateTimePicker.TabIndex = 0;
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.dataGridView2);
+            this.groupBox4.Controls.Add(this.invoiceDataGridView);
             this.groupBox4.Location = new System.Drawing.Point(8, 106);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(1);
             this.groupBox4.Name = "groupBox4";
@@ -830,47 +839,16 @@ namespace Invoice
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Invoice Log";
             // 
-            // dataGridView2
+            // invoiceDataGridView
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5});
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(1, 14);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(1);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 40;
-            this.dataGridView2.Size = new System.Drawing.Size(742, 211);
-            this.dataGridView2.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Column1";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Column2";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Column3";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Column4";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "Column5";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.invoiceDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.invoiceDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.invoiceDataGridView.Location = new System.Drawing.Point(1, 14);
+            this.invoiceDataGridView.Margin = new System.Windows.Forms.Padding(1);
+            this.invoiceDataGridView.Name = "invoiceDataGridView";
+            this.invoiceDataGridView.RowTemplate.Height = 40;
+            this.invoiceDataGridView.Size = new System.Drawing.Size(742, 211);
+            this.invoiceDataGridView.TabIndex = 0;
             // 
             // label10
             // 
@@ -882,6 +860,13 @@ namespace Invoice
             this.label10.Size = new System.Drawing.Size(221, 31);
             this.label10.TabIndex = 5;
             this.label10.Text = "Company Name";
+            // 
+            // deleteDailyActivityTextBox
+            // 
+            this.deleteDailyActivityTextBox.Location = new System.Drawing.Point(12, 48);
+            this.deleteDailyActivityTextBox.Name = "deleteDailyActivityTextBox";
+            this.deleteDailyActivityTextBox.Size = new System.Drawing.Size(110, 20);
+            this.deleteDailyActivityTextBox.TabIndex = 6;
             // 
             // Mainmenu
             // 
@@ -926,7 +911,7 @@ namespace Invoice
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoiceDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -970,9 +955,9 @@ namespace Invoice
         private GroupBox groupBox1;
         private DataGridView activityDataGridView;
         private GroupBox groupBox3;
-        private Button button2;
+        private Button deleteDailyActivity;
         private Label label5;
-        private ComboBox comboBox2;
+        private ComboBox deleteRecNumberComboBox;
         private GroupBox groupBox2;
         private Label label6;
         private TextBox activityDiscountTextBox;
@@ -984,20 +969,15 @@ namespace Invoice
         private DateTimePicker activityDateTimePicker;
         private Label label3;
         private GroupBox groupBox5;
-        private Button button3;
+        private Button generateInvoiceButton;
         private Label label9;
-        private DateTimePicker dateTimePicker4;
+        private DateTimePicker invoiceDateDateTimePicker;
         private Label label8;
         private Label label7;
-        private DateTimePicker dateTimePicker3;
-        private DateTimePicker dateTimePicker2;
+        private DateTimePicker endingDateActivityDateTimePicker;
+        private DateTimePicker startingDateActivtyDateTimePicker;
         private GroupBox groupBox4;
-        private DataGridView dataGridView2;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private DataGridView invoiceDataGridView;
         private GroupBox groupBox6;
         private Label label10;
         private ToolStripMenuItem editClientInformationToolStripMenuItem;
@@ -1010,6 +990,8 @@ namespace Invoice
         private Label label11;
         private TextBox activityServiceDescriptionTextBox;
         private Label label12;
+        private ToolStripMenuItem saveToolStripMenuItem;
+        private TextBox deleteDailyActivityTextBox;
     }
 }
 

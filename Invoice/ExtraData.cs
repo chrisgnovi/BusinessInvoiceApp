@@ -285,7 +285,11 @@ namespace Invoice
 
         public DataTable getClientDataTable(string key)
         {
-            return getClient(key).dTable;
+            if (!key.Equals(""))
+            {
+                return getClient(key).dTable;
+            }
+            return null;
         }
 
 
@@ -300,6 +304,26 @@ namespace Invoice
 
         }
 
+        public void deleteRowClientDataTable(string key, int recNum)
+        {
+
+            if (clientDictionary.ContainsKey(key))
+            {
+                int index = -1;
+
+                var ids = clientDictionary[key].dTable.AsEnumerable().Select(r => r.Field<int>("Rec#")).ToList();
+
+                index = ids.FindIndex(x => x == recNum);
+
+                if (index != -1)
+                {
+                   clientDictionary[key].dTable.Rows.Remove(clientDictionary[key].dTable.Rows[index]);
+
+                }
+                
+            }
+        }
+
         public void addCloumnClientDataTable(string key, string col, object type )
         {
             if (clientDictionary.ContainsKey(key))
@@ -307,6 +331,40 @@ namespace Invoice
                 clientDictionary[key].dTable.Columns.Add(col,type.GetType());
             }
 
+        }
+
+        public DataTable subClientDataTable(string key, DateTime start, DateTime end)
+        {
+            DataTable dtcopy = clientDictionary[key].dTable.Copy();
+            dtcopy.DefaultView.Sort = "Date of Service";
+            dtcopy = dtcopy.DefaultView.ToTable();
+
+            int startID = 0;
+            int endID = 0;
+
+            var ids = dtcopy.AsEnumerable().Select(r => r.Field<DateTime>("Date of Service")).ToList();
+            startID = ids.FindIndex(x => x > start);
+            if(startID == -1) { startID = ids.Count; }
+            endID = ids.FindIndex(x => x > end);
+            if (endID == -1) { endID = ids.Count; }
+
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Rec#", typeof(int));
+            dt.Columns.Add("Date of Service", typeof(DateTime));
+            dt.Columns.Add("Service Description", typeof(string));
+            dt.Columns.Add("Code", typeof(string));
+            dt.Columns.Add("Time", typeof(double));
+            dt.Columns.Add("Mileage", typeof(double));
+            dt.Columns.Add("Discount", typeof(double));
+           
+            for (int i = startID; i < endID; i++)
+            {
+                DataRow dr = dtcopy.Rows[i];
+                dt.Rows.Add(dr.ItemArray);
+                
+            }
+            dtcopy.Clear(); 
+            return dt;
         }
 
         public void setClientdTable(string key, string[] row)

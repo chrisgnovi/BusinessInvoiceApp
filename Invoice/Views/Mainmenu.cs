@@ -9,6 +9,8 @@ namespace Invoice
     public partial class Mainmenu : Form
     {
         ClientInformation clientInformation = ClientInformation.Instance();
+        private double number;
+
 
         public Mainmenu()
         {
@@ -52,6 +54,16 @@ namespace Invoice
         private void FillCodeBox()
         {
             activityBillingCodeComboBox.Items.Clear();
+            foreach (string s in clientInformation.extraData.ServiceCodesList())
+            {
+                activityBillingCodeComboBox.Items.Add(s);
+            }
+        }
+
+        private void FillDeleteListBox()
+        {
+            deleteRecNumberComboBox.Items.Clear();
+
             foreach (string s in clientInformation.extraData.ServiceCodesList())
             {
                 activityBillingCodeComboBox.Items.Add(s);
@@ -158,19 +170,55 @@ namespace Invoice
         private void addDailyActivity_Click(object sender, EventArgs e)
         {
 
+            double time = 0;
+            double mil = 0;
+            double dis = 0; 
             string s = this.ClientslistBox.Text;
             ArrayList row = new ArrayList();
 
-            DateTime dt = activityDateTimePicker.Value;
+            DateTime dt = activityDateTimePicker.Value.Date;
             string disc = activityServiceDescriptionTextBox.Text;
             string code = activityBillingCodeComboBox.Text;
-            double time = Convert.ToDouble(activityTimeTextBox.Text); 
-            double mil = Convert.ToDouble(activityMileageTextBox.Text);
-            double dis = Convert.ToDouble(activityDiscountTextBox.Text);
+            if (Double.TryParse(activityTimeTextBox.Text, out number)) { time = Convert.ToDouble(activityTimeTextBox.Text); }
+            if (Double.TryParse(activityTimeTextBox.Text, out number)) { mil = Convert.ToDouble(activityMileageTextBox.Text); }
+            if (Double.TryParse(activityDiscountTextBox.Text, out number)){ dis = Convert.ToDouble(activityDiscountTextBox.Text); }
+            
 
             clientInformation.extraData.addRowClientDataTable(s, dt, disc, code, time, mil, dis);
+            
 
         }
 
+        private void deleteDailyActivity_Click(object sender, EventArgs e)
+        {
+            string s = this.ClientslistBox.Text;
+            string r = this.deleteDailyActivityTextBox.Text;
+
+            clientInformation.extraData.deleteRowClientDataTable(s, int.Parse(r));
+
+
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            clientInformation.Save();
+        }
+
+        private void fileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void generateInvoiceButton_Click(object sender, EventArgs e)
+        {
+            DateTime startDate = startingDateActivtyDateTimePicker.Value.Date;
+            DateTime endDate = endingDateActivityDateTimePicker.Value.Date;
+            DateTime invDate = invoiceDateDateTimePicker.Value.Date;
+            string s = this.ClientslistBox.Text;
+
+            DataTable dt = clientInformation.extraData.subClientDataTable(s, startDate, endDate);
+            this.invoiceDataGridView.DataSource = dt;
+
+        }
     }
 }
