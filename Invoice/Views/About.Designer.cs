@@ -34,19 +34,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 36);
+            this.label1.Location = new System.Drawing.Point(12, 15);
+            this.label1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(700, 96);
+            this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "This is a invioce program decided to do the accounting\r\n and genrate PDF invoices" +
-    " for bills.\r\n\r\n";
+            this.label1.Text = "About.....";
             // 
             // About
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(798, 290);
+            this.ClientSize = new System.Drawing.Size(299, 122);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Name = "About";
             this.Text = "About";
             this.ResumeLayout(false);
