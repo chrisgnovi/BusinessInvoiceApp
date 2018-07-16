@@ -70,10 +70,14 @@ namespace Invoice
             this.clientPhoneLabel = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.deleteDailyActivityTextBox = new System.Windows.Forms.TextBox();
             this.deleteDailyActivity = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.deleteRecNumberComboBox = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.activityServiceDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.activityMileageTextBox = new System.Windows.Forms.TextBox();
@@ -91,6 +95,7 @@ namespace Invoice
             this.activityDataGridView = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.summaryRichTextBox = new System.Windows.Forms.RichTextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.generateInvoiceButton = new System.Windows.Forms.Button();
@@ -103,7 +108,6 @@ namespace Invoice
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.invoiceDataGridView = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
-            this.deleteDailyActivityTextBox = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -134,7 +138,7 @@ namespace Invoice
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(2, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(960, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1090, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -151,14 +155,14 @@ namespace Invoice
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.newToolStripMenuItem.Text = "New Client";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.NewToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -244,7 +248,7 @@ namespace Invoice
             this.ClientslistBox.Location = new System.Drawing.Point(17, 74);
             this.ClientslistBox.Margin = new System.Windows.Forms.Padding(1);
             this.ClientslistBox.Name = "ClientslistBox";
-            this.ClientslistBox.Size = new System.Drawing.Size(115, 524);
+            this.ClientslistBox.Size = new System.Drawing.Size(115, 511);
             this.ClientslistBox.TabIndex = 2;
             this.ClientslistBox.Click += new System.EventHandler(this.ClientslistBox_Click);
             // 
@@ -270,7 +274,7 @@ namespace Invoice
             this.tabControl1.Margin = new System.Windows.Forms.Padding(1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(804, 526);
+            this.tabControl1.Size = new System.Drawing.Size(934, 528);
             this.tabControl1.TabIndex = 4;
             // 
             // tabPage1
@@ -284,7 +288,7 @@ namespace Invoice
             this.tabPage1.Margin = new System.Windows.Forms.Padding(1);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(1);
-            this.tabPage1.Size = new System.Drawing.Size(796, 500);
+            this.tabPage1.Size = new System.Drawing.Size(926, 502);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Info";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -487,7 +491,7 @@ namespace Invoice
             this.tabPage2.Margin = new System.Windows.Forms.Padding(1);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(1);
-            this.tabPage2.Size = new System.Drawing.Size(796, 500);
+            this.tabPage2.Size = new System.Drawing.Size(926, 486);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Activity Log";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -497,19 +501,25 @@ namespace Invoice
             this.groupBox3.Controls.Add(this.deleteDailyActivityTextBox);
             this.groupBox3.Controls.Add(this.deleteDailyActivity);
             this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.deleteRecNumberComboBox);
-            this.groupBox3.Location = new System.Drawing.Point(615, 283);
+            this.groupBox3.Location = new System.Drawing.Point(769, 283);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(1);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(1);
-            this.groupBox3.Size = new System.Drawing.Size(133, 186);
+            this.groupBox3.Size = new System.Drawing.Size(133, 176);
             this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Delete Daily Activity";
             // 
+            // deleteDailyActivityTextBox
+            // 
+            this.deleteDailyActivityTextBox.Location = new System.Drawing.Point(12, 48);
+            this.deleteDailyActivityTextBox.Name = "deleteDailyActivityTextBox";
+            this.deleteDailyActivityTextBox.Size = new System.Drawing.Size(110, 20);
+            this.deleteDailyActivityTextBox.TabIndex = 6;
+            // 
             // deleteDailyActivity
             // 
-            this.deleteDailyActivity.Location = new System.Drawing.Point(12, 140);
+            this.deleteDailyActivity.Location = new System.Drawing.Point(12, 109);
             this.deleteDailyActivity.Margin = new System.Windows.Forms.Padding(1);
             this.deleteDailyActivity.Name = "deleteDailyActivity";
             this.deleteDailyActivity.Size = new System.Drawing.Size(107, 36);
@@ -528,17 +538,12 @@ namespace Invoice
             this.label5.TabIndex = 4;
             this.label5.Text = "Select Rec#";
             // 
-            // deleteRecNumberComboBox
-            // 
-            this.deleteRecNumberComboBox.FormattingEnabled = true;
-            this.deleteRecNumberComboBox.Location = new System.Drawing.Point(12, 75);
-            this.deleteRecNumberComboBox.Margin = new System.Windows.Forms.Padding(1);
-            this.deleteRecNumberComboBox.Name = "deleteRecNumberComboBox";
-            this.deleteRecNumberComboBox.Size = new System.Drawing.Size(110, 21);
-            this.deleteRecNumberComboBox.TabIndex = 0;
-            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label14);
+            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.activityServiceDescriptionTextBox);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.activityMileageTextBox);
@@ -556,18 +561,55 @@ namespace Invoice
             this.groupBox2.Margin = new System.Windows.Forms.Padding(1);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(1);
-            this.groupBox2.Size = new System.Drawing.Size(544, 186);
+            this.groupBox2.Size = new System.Drawing.Size(718, 176);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Add Daily Activity";
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(639, 23);
+            this.label14.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(42, 13);
+            this.label14.TabIndex = 17;
+            this.label14.Text = "amount";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(642, 47);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(1);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(66, 20);
+            this.textBox1.TabIndex = 16;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(551, 47);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(1);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(65, 21);
+            this.comboBox1.TabIndex = 15;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(548, 23);
+            this.label13.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(76, 13);
+            this.label13.TabIndex = 14;
+            this.label13.Text = "Expense Code";
+            // 
             // activityServiceDescriptionTextBox
             // 
-            this.activityServiceDescriptionTextBox.Location = new System.Drawing.Point(11, 91);
+            this.activityServiceDescriptionTextBox.Location = new System.Drawing.Point(11, 89);
             this.activityServiceDescriptionTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.activityServiceDescriptionTextBox.Multiline = true;
             this.activityServiceDescriptionTextBox.Name = "activityServiceDescriptionTextBox";
-            this.activityServiceDescriptionTextBox.Size = new System.Drawing.Size(370, 87);
+            this.activityServiceDescriptionTextBox.Size = new System.Drawing.Size(578, 65);
             this.activityServiceDescriptionTextBox.TabIndex = 13;
             // 
             // label12
@@ -591,7 +633,7 @@ namespace Invoice
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(469, 23);
+            this.label11.Location = new System.Drawing.Point(468, 23);
             this.label11.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(63, 13);
@@ -627,7 +669,7 @@ namespace Invoice
             // 
             // AddDailyActivityButton
             // 
-            this.AddDailyActivityButton.Location = new System.Drawing.Point(426, 140);
+            this.AddDailyActivityButton.Location = new System.Drawing.Point(601, 118);
             this.AddDailyActivityButton.Margin = new System.Windows.Forms.Padding(1);
             this.AddDailyActivityButton.Name = "AddDailyActivityButton";
             this.AddDailyActivityButton.Size = new System.Drawing.Size(107, 36);
@@ -652,9 +694,9 @@ namespace Invoice
             this.label2.Location = new System.Drawing.Point(9, 23);
             this.label2.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 13);
+            this.label2.Size = new System.Drawing.Size(71, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Billing Code";
+            this.label2.Text = "Service Code";
             // 
             // activityTimeTextBox
             // 
@@ -689,7 +731,7 @@ namespace Invoice
             this.groupBox1.Margin = new System.Windows.Forms.Padding(1);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(1);
-            this.groupBox1.Size = new System.Drawing.Size(744, 258);
+            this.groupBox1.Size = new System.Drawing.Size(909, 258);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Activity Log";
@@ -701,40 +743,53 @@ namespace Invoice
             this.activityDataGridView.Location = new System.Drawing.Point(1, 14);
             this.activityDataGridView.Margin = new System.Windows.Forms.Padding(1);
             this.activityDataGridView.Name = "activityDataGridView";
+            this.activityDataGridView.ReadOnly = true;
             this.activityDataGridView.RowTemplate.Height = 40;
-            this.activityDataGridView.Size = new System.Drawing.Size(742, 243);
+            this.activityDataGridView.Size = new System.Drawing.Size(907, 243);
             this.activityDataGridView.TabIndex = 0;
             // 
             // tabPage3
             // 
             this.tabPage3.AutoScroll = true;
             this.tabPage3.Controls.Add(this.groupBox6);
+            this.tabPage3.Controls.Add(this.button4);
             this.tabPage3.Controls.Add(this.groupBox5);
             this.tabPage3.Controls.Add(this.groupBox4);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(1);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(1);
-            this.tabPage3.Size = new System.Drawing.Size(796, 500);
+            this.tabPage3.Size = new System.Drawing.Size(926, 502);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Invoice";
             this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.button4);
-            this.groupBox6.Location = new System.Drawing.Point(10, 349);
+            this.groupBox6.Controls.Add(this.summaryRichTextBox);
+            this.groupBox6.Location = new System.Drawing.Point(10, 344);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(1);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(1);
-            this.groupBox6.Size = new System.Drawing.Size(740, 138);
+            this.groupBox6.Size = new System.Drawing.Size(599, 143);
             this.groupBox6.TabIndex = 3;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Summary ";
             // 
+            // summaryRichTextBox
+            // 
+            this.summaryRichTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.summaryRichTextBox.Location = new System.Drawing.Point(1, 14);
+            this.summaryRichTextBox.Name = "summaryRichTextBox";
+            this.summaryRichTextBox.ReadOnly = true;
+            this.summaryRichTextBox.Size = new System.Drawing.Size(597, 128);
+            this.summaryRichTextBox.TabIndex = 8;
+            this.summaryRichTextBox.Text = "";
+            // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(614, 95);
+            this.button4.Location = new System.Drawing.Point(803, 455);
             this.button4.Margin = new System.Windows.Forms.Padding(1);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(110, 31);
@@ -830,11 +885,11 @@ namespace Invoice
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.invoiceDataGridView);
-            this.groupBox4.Location = new System.Drawing.Point(8, 106);
+            this.groupBox4.Location = new System.Drawing.Point(-4, 106);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(1);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(1);
-            this.groupBox4.Size = new System.Drawing.Size(744, 226);
+            this.groupBox4.Size = new System.Drawing.Size(928, 226);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Invoice Log";
@@ -846,8 +901,9 @@ namespace Invoice
             this.invoiceDataGridView.Location = new System.Drawing.Point(1, 14);
             this.invoiceDataGridView.Margin = new System.Windows.Forms.Padding(1);
             this.invoiceDataGridView.Name = "invoiceDataGridView";
+            this.invoiceDataGridView.ReadOnly = true;
             this.invoiceDataGridView.RowTemplate.Height = 40;
-            this.invoiceDataGridView.Size = new System.Drawing.Size(742, 211);
+            this.invoiceDataGridView.Size = new System.Drawing.Size(926, 211);
             this.invoiceDataGridView.TabIndex = 0;
             // 
             // label10
@@ -861,13 +917,6 @@ namespace Invoice
             this.label10.TabIndex = 5;
             this.label10.Text = "Company Name";
             // 
-            // deleteDailyActivityTextBox
-            // 
-            this.deleteDailyActivityTextBox.Location = new System.Drawing.Point(12, 48);
-            this.deleteDailyActivityTextBox.Name = "deleteDailyActivityTextBox";
-            this.deleteDailyActivityTextBox.Size = new System.Drawing.Size(110, 20);
-            this.deleteDailyActivityTextBox.TabIndex = 6;
-            // 
             // Mainmenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -875,7 +924,7 @@ namespace Invoice
             this.AutoScroll = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Menu;
-            this.ClientSize = new System.Drawing.Size(960, 610);
+            this.ClientSize = new System.Drawing.Size(1090, 612);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label1);
@@ -887,6 +936,7 @@ namespace Invoice
             this.Text = "Main Menu";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Activated += new System.EventHandler(this.Mainmenu_Activated);
+            this.Load += new System.EventHandler(this.Mainmenu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -957,7 +1007,6 @@ namespace Invoice
         private GroupBox groupBox3;
         private Button deleteDailyActivity;
         private Label label5;
-        private ComboBox deleteRecNumberComboBox;
         private GroupBox groupBox2;
         private Label label6;
         private TextBox activityDiscountTextBox;
@@ -992,6 +1041,11 @@ namespace Invoice
         private Label label12;
         private ToolStripMenuItem saveToolStripMenuItem;
         private TextBox deleteDailyActivityTextBox;
+        private RichTextBox summaryRichTextBox;
+        private Label label14;
+        private TextBox textBox1;
+        private ComboBox comboBox1;
+        private Label label13;
     }
 }
 

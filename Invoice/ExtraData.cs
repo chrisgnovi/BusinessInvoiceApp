@@ -16,7 +16,7 @@ namespace Invoice
         private Dictionary<string, Client> clientDictionary = new Dictionary<string, Client>();
         private Dictionary<string, Employee> empDic = new Dictionary<string, Employee>();
         private Dictionary<string, string> expenseCodeDic = new Dictionary<string, string>();
-        private Dictionary<string, string> serviceCodeDic = new Dictionary<string, string>();
+        public Dictionary<string, string> serviceCodeDic = new Dictionary<string, string>();
 
         //System Information Maintence; 
         public string companyName { get; set; }
@@ -356,7 +356,10 @@ namespace Invoice
             dt.Columns.Add("Time", typeof(double));
             dt.Columns.Add("Mileage", typeof(double));
             dt.Columns.Add("Discount", typeof(double));
-           
+
+
+       
+
             for (int i = startID; i < endID; i++)
             {
                 DataRow dr = dtcopy.Rows[i];

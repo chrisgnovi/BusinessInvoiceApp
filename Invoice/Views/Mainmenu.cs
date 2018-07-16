@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Data;
+using System.Linq;
 using System.Windows.Forms;
 using Invoice.Views;
 
@@ -60,15 +61,7 @@ namespace Invoice
             }
         }
 
-        private void FillDeleteListBox()
-        {
-            deleteRecNumberComboBox.Items.Clear();
-
-            foreach (string s in clientInformation.extraData.ServiceCodesList())
-            {
-                activityBillingCodeComboBox.Items.Add(s);
-            }
-        }
+       
 
         private void ClientslistBox_Click(object sender, EventArgs e)
         {
@@ -180,7 +173,7 @@ namespace Invoice
             string disc = activityServiceDescriptionTextBox.Text;
             string code = activityBillingCodeComboBox.Text;
             if (Double.TryParse(activityTimeTextBox.Text, out number)) { time = Convert.ToDouble(activityTimeTextBox.Text); }
-            if (Double.TryParse(activityTimeTextBox.Text, out number)) { mil = Convert.ToDouble(activityMileageTextBox.Text); }
+            if (Double.TryParse(activityMileageTextBox.Text, out number)) { mil = Convert.ToDouble(activityMileageTextBox.Text); }
             if (Double.TryParse(activityDiscountTextBox.Text, out number)){ dis = Convert.ToDouble(activityDiscountTextBox.Text); }
             
 
@@ -211,13 +204,86 @@ namespace Invoice
 
         private void generateInvoiceButton_Click(object sender, EventArgs e)
         {
-            DateTime startDate = startingDateActivtyDateTimePicker.Value.Date;
-            DateTime endDate = endingDateActivityDateTimePicker.Value.Date;
-            DateTime invDate = invoiceDateDateTimePicker.Value.Date;
-            string s = this.ClientslistBox.Text;
+            if (!ClientslistBox.Text.Equals(""))
+            {
+                DateTime startDate = startingDateActivtyDateTimePicker.Value.Date;
+                DateTime endDate = endingDateActivityDateTimePicker.Value.Date;
+                DateTime invDate = invoiceDateDateTimePicker.Value.Date;
+                string s = this.ClientslistBox.Text;
 
-            DataTable dt = clientInformation.extraData.subClientDataTable(s, startDate, endDate);
-            this.invoiceDataGridView.DataSource = dt;
+                DataTable dt = clientInformation.extraData.subClientDataTable(s, startDate, endDate);
+                this.invoiceDataGridView.DataSource = dt;
+
+                string[] codes = dt.AsEnumerable().Select(x => x.Field<string>("Code")).Distinct<string>().ToArray<string>();
+                double[] times = new double[codes.Length];
+                double[] billHours = new double[codes.Length];
+
+
+                for (int i = 0; i < codes.Length; i++)
+                {
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        if (dr[3].Equals(codes[i].ToString()))
+                        {
+                            times[i] += Convert.ToDouble(dr[4]);
+                        }
+                    }
+                }
+
+
+                // Bill hours
+
+                double hourRate = double.Parse(clientInformation.extraData.getClient(s).carrierBillingRate);
+                
+
+                for (int i = 0; i < codes.Length; i++)
+                {
+                    billHours[i] = times[i] * hourRate;
+
+                }
+
+                double totalBill = billHours.Sum();
+
+
+                clear();
+                addSummaryStatus("Billing Code\t\tHours\tBill\n--------------------------------------------------------------------------");
+                
+
+                for(int i = 0; i < times.Length; i++)
+                {
+                    addSummaryStatus(clientInformation.extraData.serviceCodeDic[codes[i].ToString()] + "\t\t\t" + times[i].ToString() + 
+                        "\t" + billHours[i].ToString());
+                }
+
+                addSummaryStatus("--------------------------------------------------------------------------\n\t\t\t\t" + totalBill.ToString());
+
+            }
+        }
+
+
+
+        private void addSummaryStatus(string message)
+        {
+            this.summaryRichTextBox.Visible = true;
+            this.summaryRichTextBox.Text += message + "\n";
+            this.summaryRichTextBox.SelectionStart = this.summaryRichTextBox.TextLength;
+            this.summaryRichTextBox.ScrollToCaret();
+            this.summaryRichTextBox.Refresh();
+        }
+
+
+        private void clear()
+        {
+            this.summaryRichTextBox.Clear();
+        }
+
+        private void Mainmenu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
 
         }
     }
