@@ -107,7 +107,7 @@ namespace Invoice
             this.startingDateActivtyDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.invoiceDataGridView = new System.Windows.Forms.DataGridView();
-            this.label10 = new System.Windows.Forms.Label();
+            this.companynameLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -905,16 +905,16 @@ namespace Invoice
             this.invoiceDataGridView.Size = new System.Drawing.Size(926, 211);
             this.invoiceDataGridView.TabIndex = 0;
             // 
-            // label10
+            // companynameLabel
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(487, 35);
-            this.label10.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(221, 31);
-            this.label10.TabIndex = 5;
-            this.label10.Text = "Company Name";
+            this.companynameLabel.AutoSize = true;
+            this.companynameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.companynameLabel.Location = new System.Drawing.Point(487, 35);
+            this.companynameLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.companynameLabel.Name = "companynameLabel";
+            this.companynameLabel.Size = new System.Drawing.Size(221, 31);
+            this.companynameLabel.TabIndex = 5;
+            this.companynameLabel.Text = "Company Name";
             // 
             // Mainmenu
             // 
@@ -924,7 +924,7 @@ namespace Invoice
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(1090, 598);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.companynameLabel);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ClientslistBox);
@@ -1027,7 +1027,7 @@ namespace Invoice
         private GroupBox groupBox4;
         private DataGridView invoiceDataGridView;
         private GroupBox groupBox6;
-        private Label label10;
+        private Label companynameLabel;
         private ToolStripMenuItem editClientInformationToolStripMenuItem;
         private GroupBox groupBox11;
         private GroupBox groupBox10;

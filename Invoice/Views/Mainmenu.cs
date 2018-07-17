@@ -16,6 +16,8 @@ namespace Invoice
         public Mainmenu()
         {
             InitializeComponent();
+            this.companynameLabel.Text = clientInformation.extraData.companyName;
+
         }
 
         private void Mainmenu_Activated(object sender, EventArgs e)
