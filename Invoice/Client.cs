@@ -23,10 +23,12 @@ namespace Invoice
                 dTable.Columns.Add("Rec#", typeof(int));
                 dTable.Columns.Add("Date of Service", typeof(DateTime));
                 dTable.Columns.Add("Service Description", typeof(string));
-                dTable.Columns.Add("Code", typeof(string));
+                dTable.Columns.Add("Service Code", typeof(string));
                 dTable.Columns.Add("Time", typeof(double));
                 dTable.Columns.Add("Mileage", typeof(double));
                 dTable.Columns.Add("Discount", typeof(double));
+                dTable.Columns.Add("Expense Code", typeof(string));
+                dTable.Columns.Add("Amount", typeof(double));
                 return dTable;
             }
 

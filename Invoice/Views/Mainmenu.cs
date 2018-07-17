@@ -23,6 +23,7 @@ namespace Invoice
             FillListBox();
             activityFillData();
             FillCodeBox();
+            FillExpCodeBox();
         }
 
         private void NewToolStripMenuItem_Click(object sender, EventArgs e)
@@ -30,8 +31,6 @@ namespace Invoice
             NewClient new_window = new NewClient();
             var dialogResult = new_window.ShowDialog();
             new_window.Dispose();
-
-
         }
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
@@ -39,7 +38,6 @@ namespace Invoice
             EditClient edit_window = new EditClient();
             var dialogResult = edit_window.ShowDialog();
             edit_window.Dispose();
-
         }
 
 
@@ -61,7 +59,14 @@ namespace Invoice
             }
         }
 
-       
+        private void FillExpCodeBox()
+        {
+            activityExpenseCodeComboBox.Items.Clear();
+            foreach (string s in clientInformation.extraData.ExpenseCodesList())
+            {
+                activityExpenseCodeComboBox.Items.Add(s);
+            }
+        }
 
         private void ClientslistBox_Click(object sender, EventArgs e)
         {
@@ -93,10 +98,8 @@ namespace Invoice
                     ", " + client.attorneyState + ", " + client.attorneyZip;
                 AttorneyPhonelabel.Text = "Work Phone: " + client.attorneyWorkNumber + "\nHome Phone: " + client.attorneyHomePhone;
             }
-
             DataTable dt = clientInformation.extraData.getClientDataTable(s);
             this.activityDataGridView.DataSource = dt;
-
         }
 
         private void deleteClientToolStripMenuItem_Click(object sender, EventArgs e)
@@ -155,8 +158,6 @@ namespace Invoice
 
             string s = this.ClientslistBox.Text;
             Client client = clientInformation.extraData.getClient(s);
-
-       
         }
 
 
@@ -165,7 +166,8 @@ namespace Invoice
 
             double time = 0;
             double mil = 0;
-            double dis = 0; 
+            double dis = 0;
+            double amt = 0;
             string s = this.ClientslistBox.Text;
             ArrayList row = new ArrayList();
 
@@ -175,10 +177,10 @@ namespace Invoice
             if (Double.TryParse(activityTimeTextBox.Text, out number)) { time = Convert.ToDouble(activityTimeTextBox.Text); }
             if (Double.TryParse(activityMileageTextBox.Text, out number)) { mil = Convert.ToDouble(activityMileageTextBox.Text); }
             if (Double.TryParse(activityDiscountTextBox.Text, out number)){ dis = Convert.ToDouble(activityDiscountTextBox.Text); }
-            
+            string exCode = activityExpenseCodeComboBox.Text;
+            if (Double.TryParse(activityAmountTextBox.Text, out number)) { amt = Convert.ToDouble(activityAmountTextBox.Text); }
 
-            clientInformation.extraData.addRowClientDataTable(s, dt, disc, code, time, mil, dis);
-            
+            clientInformation.extraData.addRowClientDataTable(s, dt, disc, code, time, mil, dis, exCode, amt);          
 
         }
 
@@ -214,9 +216,14 @@ namespace Invoice
                 DataTable dt = clientInformation.extraData.subClientDataTable(s, startDate, endDate);
                 this.invoiceDataGridView.DataSource = dt;
 
-                string[] codes = dt.AsEnumerable().Select(x => x.Field<string>("Code")).Distinct<string>().ToArray<string>();
+                string[] codes = dt.AsEnumerable().Select(x => x.Field<string>("Service Code")).Distinct<string>().ToArray<string>();
                 double[] times = new double[codes.Length];
                 double[] billHours = new double[codes.Length];
+                double mileage = 0;
+                double totalExpense = 0;
+                double grandTotal = 0;
+                string output;
+
 
 
                 for (int i = 0; i < codes.Length; i++)
@@ -228,35 +235,48 @@ namespace Invoice
                             times[i] += Convert.ToDouble(dr[4]);
                         }
                     }
+   
                 }
 
 
-                // Bill hours
+                foreach (DataRow dr in dt.Rows)
+                {
+                    totalExpense += Convert.ToDouble(dr[8]);
+                    mileage += Convert.ToDouble(dr[5]);
+                }
 
-                double hourRate = double.Parse(clientInformation.extraData.getClient(s).carrierBillingRate);
+                    // Bill hours
+
+                    double hourRate = double.Parse(clientInformation.extraData.getClient(s).carrierBillingRate);
                 
 
                 for (int i = 0; i < codes.Length; i++)
                 {
                     billHours[i] = times[i] * hourRate;
-
                 }
 
                 double totalBill = billHours.Sum();
-
+                double billmileage = double.Parse(clientInformation.extraData.getClient(s).carrierMillageRateDistance)* mileage;
+                grandTotal = billmileage + totalBill + totalExpense;
 
                 clear();
-                addSummaryStatus("Billing Code\t\tHours\tBill\n--------------------------------------------------------------------------");
-                
-
-                for(int i = 0; i < times.Length; i++)
+                addSummaryStatus(String.Format("{0,-30}\t{1,15:N0}\t{2,-15:N0}", "Service Code", "Time (hr)", "Billing ($)"));
+                for (int i = 0; i < times.Length; i++)
                 {
-                    addSummaryStatus(clientInformation.extraData.serviceCodeDic[codes[i].ToString()] + "\t\t\t" + times[i].ToString() + 
-                        "\t" + billHours[i].ToString());
+
+                    output = String.Format("{0,-30}\t{1,15:N0}\t{2,-15:N0}", 
+                        clientInformation.extraData.serviceCodeDic[codes[i]], times[i], billHours[i]);
+
+                    addSummaryStatus(output);
                 }
-
-                addSummaryStatus("--------------------------------------------------------------------------\n\t\t\t\t" + totalBill.ToString());
-
+                addSummaryStatus("");
+                addSummaryStatus(String.Format("{0,-30}\t{1,15:N0}\t{2,-15:N0}", "Mileage", "Miles", "\t"));
+                addSummaryStatus(String.Format("{0,-30}\t{1,15:N0}\t{2,-15:N0}", "\t", mileage, billmileage));
+                addSummaryStatus("");
+                addSummaryStatus(String.Format("{0,-30}\t{1,15:N0}\t{2,-15:N0}", "Expense", "\t", "\t"));
+                addSummaryStatus(String.Format("{0,-30}\t{1,15:N0}\t{2,-15:N0}", "\t", "\t", totalExpense));
+                addSummaryStatus("------------------------------------------------------------------------------------------");
+                addSummaryStatus(String.Format("{0,-30}\t{1,15:N0}\t{2,-15:N0}", "Total", "\t", grandTotal));
             }
         }
 

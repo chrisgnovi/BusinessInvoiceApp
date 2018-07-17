@@ -293,12 +293,12 @@ namespace Invoice
         }
 
 
-        public void addRowClientDataTable(string key, DateTime dt, string disc, string code, double time, double mil, double dis)
+        public void addRowClientDataTable(string key, DateTime dt, string disc, string code, double time, double mil, double dis, string excode, double amt)
         {
             if (clientDictionary.ContainsKey(key))
             {
                 clientDictionary[key].recNumber += 1;
-                clientDictionary[key].dTable.Rows.Add(clientDictionary[key].recNumber, dt, disc, code, time, mil, dis);
+                clientDictionary[key].dTable.Rows.Add(clientDictionary[key].recNumber, dt, disc, code, time, mil, dis, excode, amt);
 
             }
 
@@ -352,13 +352,15 @@ namespace Invoice
             dt.Columns.Add("Rec#", typeof(int));
             dt.Columns.Add("Date of Service", typeof(DateTime));
             dt.Columns.Add("Service Description", typeof(string));
-            dt.Columns.Add("Code", typeof(string));
+            dt.Columns.Add("Service Code", typeof(string));
             dt.Columns.Add("Time", typeof(double));
             dt.Columns.Add("Mileage", typeof(double));
             dt.Columns.Add("Discount", typeof(double));
+            dt.Columns.Add("Expense Code", typeof(string));
+            dt.Columns.Add("Amount", typeof(double));
 
 
-       
+
 
             for (int i = startID; i < endID; i++)
             {
