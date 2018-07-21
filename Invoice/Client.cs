@@ -26,7 +26,6 @@ namespace Invoice
                 dTable.Columns.Add("Service Code", typeof(string));
                 dTable.Columns.Add("Time", typeof(double));
                 dTable.Columns.Add("Mileage", typeof(double));
-                dTable.Columns.Add("Discount", typeof(double));
                 dTable.Columns.Add("Expense Code", typeof(string));
                 dTable.Columns.Add("Amount", typeof(double));
                 return dTable;

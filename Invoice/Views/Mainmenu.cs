@@ -10,6 +10,7 @@ namespace Invoice
     public partial class Mainmenu : Form
     {
         ClientInformation clientInformation = ClientInformation.Instance();
+        PDF pdf = new PDF();
         private double number;
 
 
@@ -144,6 +145,7 @@ namespace Invoice
         {
             EditClient new_window = new EditClient();
             var dialogResult = new_window.ShowDialog();
+            new_window.BringToFront();
             new_window.Dispose();
         }
 
@@ -168,7 +170,6 @@ namespace Invoice
 
             double time = 0;
             double mil = 0;
-            double dis = 0;
             double amt = 0;
             string s = this.ClientslistBox.Text;
             ArrayList row = new ArrayList();
@@ -178,12 +179,17 @@ namespace Invoice
             string code = activityBillingCodeComboBox.Text;
             if (Double.TryParse(activityTimeTextBox.Text, out number)) { time = Convert.ToDouble(activityTimeTextBox.Text); }
             if (Double.TryParse(activityMileageTextBox.Text, out number)) { mil = Convert.ToDouble(activityMileageTextBox.Text); }
-            if (Double.TryParse(activityDiscountTextBox.Text, out number)){ dis = Convert.ToDouble(activityDiscountTextBox.Text); }
             string exCode = activityExpenseCodeComboBox.Text;
             if (Double.TryParse(activityAmountTextBox.Text, out number)) { amt = Convert.ToDouble(activityAmountTextBox.Text); }
 
-            clientInformation.extraData.addRowClientDataTable(s, dt, disc, code, time, mil, dis, exCode, amt);          
-
+            if (activityBillingCodeComboBox.Text.Equals("") && activityTimeTextBox.Text.Equals("") ||
+               !activityBillingCodeComboBox.Text.Equals("") && !activityTimeTextBox.Text.Equals("")) {
+                clientInformation.extraData.addRowClientDataTable(s, dt, disc, code, time, mil, exCode, amt);
+            }
+            else
+            {
+                MessageBox.Show("Error: must enter a service code with a time");
+            }
         }
 
         private void deleteDailyActivity_Click(object sender, EventArgs e)
@@ -205,6 +211,8 @@ namespace Invoice
         {
 
         }
+
+        
 
         private void generateInvoiceButton_Click(object sender, EventArgs e)
         {
@@ -243,7 +251,7 @@ namespace Invoice
 
                 foreach (DataRow dr in dt.Rows)
                 {
-                    totalExpense += Convert.ToDouble(dr[8]);
+                    totalExpense += Convert.ToDouble(dr[7]);
                     mileage += Convert.ToDouble(dr[5]);
                 }
 
@@ -266,10 +274,13 @@ namespace Invoice
                 for (int i = 0; i < times.Length; i++)
                 {
 
-                    output = String.Format("{0,-30}\t{1,15:N0}\t{2,-15:N0}", 
-                        clientInformation.extraData.serviceCodeDic[codes[i]], times[i], billHours[i]);
+                    if (!codes[i].Equals(""))
+                    {
+                        output = String.Format("{0,-30}\t{1,15:N0}\t{2,-15:N0}",
+                            clientInformation.extraData.serviceCodeDic[codes[i]], times[i], billHours[i]);
 
-                    addSummaryStatus(output);
+                        addSummaryStatus(output);
+                    }
                 }
                 addSummaryStatus("");
                 addSummaryStatus(String.Format("{0,-30}\t{1,15:N0}\t{2,-15:N0}", "Mileage", "Miles", "\t"));
@@ -307,6 +318,22 @@ namespace Invoice
         private void tabPage3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void printInvoiceButton_Click(object sender, EventArgs e)
+        {
+            if (!ClientslistBox.Text.Equals(""))
+            {
+
+                DateTime startDate = startingDateActivtyDateTimePicker.Value.Date;
+                DateTime endDate = endingDateActivityDateTimePicker.Value.Date;
+                DateTime invDate = invoiceDateDateTimePicker.Value.Date;
+                string s = this.ClientslistBox.Text;
+
+                DataTable dt = clientInformation.extraData.subClientDataTable(s, startDate, endDate);
+
+                pdf.Make();
+            }
         }
     }
 }

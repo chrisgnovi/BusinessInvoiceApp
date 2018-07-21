@@ -54,6 +54,8 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.carrierTabPage = new System.Windows.Forms.TabPage();
+            this.carrierMileageRateTextBox = new System.Windows.Forms.TextBox();
+            this.label78 = new System.Windows.Forms.Label();
             this.carrierBillRatePercentTextBox = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.carrierBillRateTextBox = new System.Windows.Forms.TextBox();
@@ -190,8 +192,6 @@
             this.suspendInvoiceTextBox = new System.Windows.Forms.TextBox();
             this.serviceBeginDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.difficultyRatingTextBox = new System.Windows.Forms.TextBox();
-            this.label78 = new System.Windows.Forms.Label();
-            this.carrierMileageRateTextBox = new System.Windows.Forms.TextBox();
             this.attorneyTabPage.SuspendLayout();
             this.carrierTabPage.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -213,7 +213,7 @@
             // newClienButton
             // 
             this.newClienButton.Location = new System.Drawing.Point(270, 395);
-            this.newClienButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.newClienButton.Margin = new System.Windows.Forms.Padding(1);
             this.newClienButton.Name = "newClienButton";
             this.newClienButton.Size = new System.Drawing.Size(104, 27);
             this.newClienButton.TabIndex = 50;
@@ -246,9 +246,9 @@
             this.attorneyTabPage.Controls.Add(this.label23);
             this.attorneyTabPage.Controls.Add(this.label22);
             this.attorneyTabPage.Location = new System.Drawing.Point(4, 22);
-            this.attorneyTabPage.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.attorneyTabPage.Margin = new System.Windows.Forms.Padding(1);
             this.attorneyTabPage.Name = "attorneyTabPage";
-            this.attorneyTabPage.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.attorneyTabPage.Padding = new System.Windows.Forms.Padding(1);
             this.attorneyTabPage.Size = new System.Drawing.Size(349, 268);
             this.attorneyTabPage.TabIndex = 2;
             this.attorneyTabPage.Text = "Attorney";
@@ -257,7 +257,7 @@
             // attorneyParalegalTextBox
             // 
             this.attorneyParalegalTextBox.Location = new System.Drawing.Point(61, 166);
-            this.attorneyParalegalTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.attorneyParalegalTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.attorneyParalegalTextBox.Name = "attorneyParalegalTextBox";
             this.attorneyParalegalTextBox.Size = new System.Drawing.Size(274, 20);
             this.attorneyParalegalTextBox.TabIndex = 35;
@@ -275,7 +275,7 @@
             // attoneyFaxTextBox
             // 
             this.attoneyFaxTextBox.Location = new System.Drawing.Point(61, 135);
-            this.attoneyFaxTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.attoneyFaxTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.attoneyFaxTextBox.Name = "attoneyFaxTextBox";
             this.attoneyFaxTextBox.Size = new System.Drawing.Size(78, 20);
             this.attoneyFaxTextBox.TabIndex = 33;
@@ -283,7 +283,7 @@
             // attonryWorkPhoneTextBox
             // 
             this.attonryWorkPhoneTextBox.Location = new System.Drawing.Point(243, 111);
-            this.attonryWorkPhoneTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.attonryWorkPhoneTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.attonryWorkPhoneTextBox.Name = "attonryWorkPhoneTextBox";
             this.attonryWorkPhoneTextBox.Size = new System.Drawing.Size(92, 20);
             this.attonryWorkPhoneTextBox.TabIndex = 32;
@@ -291,7 +291,7 @@
             // attoneyHomePhoneTextBox
             // 
             this.attoneyHomePhoneTextBox.Location = new System.Drawing.Point(84, 111);
-            this.attoneyHomePhoneTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.attoneyHomePhoneTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.attoneyHomePhoneTextBox.Name = "attoneyHomePhoneTextBox";
             this.attoneyHomePhoneTextBox.Size = new System.Drawing.Size(78, 20);
             this.attoneyHomePhoneTextBox.TabIndex = 31;
@@ -299,7 +299,7 @@
             // attorneyZipTextBox
             // 
             this.attorneyZipTextBox.Location = new System.Drawing.Point(243, 84);
-            this.attorneyZipTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.attorneyZipTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.attorneyZipTextBox.Name = "attorneyZipTextBox";
             this.attorneyZipTextBox.Size = new System.Drawing.Size(92, 20);
             this.attorneyZipTextBox.TabIndex = 30;
@@ -307,7 +307,7 @@
             // attorneyStateTextBox
             // 
             this.attorneyStateTextBox.Location = new System.Drawing.Point(170, 83);
-            this.attorneyStateTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.attorneyStateTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.attorneyStateTextBox.Name = "attorneyStateTextBox";
             this.attorneyStateTextBox.Size = new System.Drawing.Size(40, 20);
             this.attorneyStateTextBox.TabIndex = 29;
@@ -315,7 +315,7 @@
             // attorneyCityTextBox
             // 
             this.attorneyCityTextBox.Location = new System.Drawing.Point(61, 84);
-            this.attorneyCityTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.attorneyCityTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.attorneyCityTextBox.Name = "attorneyCityTextBox";
             this.attorneyCityTextBox.Size = new System.Drawing.Size(67, 20);
             this.attorneyCityTextBox.TabIndex = 28;
@@ -323,7 +323,7 @@
             // attorneyAdrressLine2TextBox
             // 
             this.attorneyAdrressLine2TextBox.Location = new System.Drawing.Point(61, 60);
-            this.attorneyAdrressLine2TextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.attorneyAdrressLine2TextBox.Margin = new System.Windows.Forms.Padding(1);
             this.attorneyAdrressLine2TextBox.Name = "attorneyAdrressLine2TextBox";
             this.attorneyAdrressLine2TextBox.Size = new System.Drawing.Size(274, 20);
             this.attorneyAdrressLine2TextBox.TabIndex = 27;
@@ -331,7 +331,7 @@
             // attoneyAddressLine1TextBox
             // 
             this.attoneyAddressLine1TextBox.Location = new System.Drawing.Point(61, 35);
-            this.attoneyAddressLine1TextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.attoneyAddressLine1TextBox.Margin = new System.Windows.Forms.Padding(1);
             this.attoneyAddressLine1TextBox.Name = "attoneyAddressLine1TextBox";
             this.attoneyAddressLine1TextBox.Size = new System.Drawing.Size(274, 20);
             this.attoneyAddressLine1TextBox.TabIndex = 26;
@@ -339,7 +339,7 @@
             // attorneyLastNameTextBox
             // 
             this.attorneyLastNameTextBox.Location = new System.Drawing.Point(215, 10);
-            this.attorneyLastNameTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.attorneyLastNameTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.attorneyLastNameTextBox.Name = "attorneyLastNameTextBox";
             this.attorneyLastNameTextBox.Size = new System.Drawing.Size(120, 20);
             this.attorneyLastNameTextBox.TabIndex = 25;
@@ -347,7 +347,7 @@
             // attorneyFirstNameTextBox
             // 
             this.attorneyFirstNameTextBox.Location = new System.Drawing.Point(61, 10);
-            this.attorneyFirstNameTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.attorneyFirstNameTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.attorneyFirstNameTextBox.Name = "attorneyFirstNameTextBox";
             this.attorneyFirstNameTextBox.Size = new System.Drawing.Size(116, 20);
             this.attorneyFirstNameTextBox.TabIndex = 24;
@@ -479,19 +479,37 @@
             this.carrierTabPage.Controls.Add(this.carrierNameTextBox);
             this.carrierTabPage.Controls.Add(this.label10);
             this.carrierTabPage.Location = new System.Drawing.Point(4, 22);
-            this.carrierTabPage.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.carrierTabPage.Margin = new System.Windows.Forms.Padding(1);
             this.carrierTabPage.Name = "carrierTabPage";
-            this.carrierTabPage.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.carrierTabPage.Padding = new System.Windows.Forms.Padding(1);
             this.carrierTabPage.Size = new System.Drawing.Size(349, 268);
             this.carrierTabPage.TabIndex = 1;
             this.carrierTabPage.Text = "Carrier";
             this.carrierTabPage.UseVisualStyleBackColor = true;
             this.carrierTabPage.Click += new System.EventHandler(this.carrierTabPage_Click);
             // 
+            // carrierMileageRateTextBox
+            // 
+            this.carrierMileageRateTextBox.Location = new System.Drawing.Point(89, 187);
+            this.carrierMileageRateTextBox.Margin = new System.Windows.Forms.Padding(1);
+            this.carrierMileageRateTextBox.Name = "carrierMileageRateTextBox";
+            this.carrierMileageRateTextBox.Size = new System.Drawing.Size(62, 20);
+            this.carrierMileageRateTextBox.TabIndex = 33;
+            // 
+            // label78
+            // 
+            this.label78.AutoSize = true;
+            this.label78.Location = new System.Drawing.Point(8, 187);
+            this.label78.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(70, 13);
+            this.label78.TabIndex = 32;
+            this.label78.Text = "Mileage Rate";
+            // 
             // carrierBillRatePercentTextBox
             // 
             this.carrierBillRatePercentTextBox.Location = new System.Drawing.Point(185, 159);
-            this.carrierBillRatePercentTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.carrierBillRatePercentTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.carrierBillRatePercentTextBox.Name = "carrierBillRatePercentTextBox";
             this.carrierBillRatePercentTextBox.Size = new System.Drawing.Size(40, 20);
             this.carrierBillRatePercentTextBox.TabIndex = 31;
@@ -511,7 +529,7 @@
             // carrierBillRateTextBox
             // 
             this.carrierBillRateTextBox.Location = new System.Drawing.Point(89, 159);
-            this.carrierBillRateTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.carrierBillRateTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.carrierBillRateTextBox.Name = "carrierBillRateTextBox";
             this.carrierBillRateTextBox.Size = new System.Drawing.Size(62, 20);
             this.carrierBillRateTextBox.TabIndex = 28;
@@ -530,7 +548,7 @@
             // carrierFaxTextBox
             // 
             this.carrierFaxTextBox.Location = new System.Drawing.Point(199, 135);
-            this.carrierFaxTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.carrierFaxTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.carrierFaxTextBox.Name = "carrierFaxTextBox";
             this.carrierFaxTextBox.Size = new System.Drawing.Size(77, 20);
             this.carrierFaxTextBox.TabIndex = 26;
@@ -548,7 +566,7 @@
             // carrierPhoneTextBox
             // 
             this.carrierPhoneTextBox.Location = new System.Drawing.Point(55, 134);
-            this.carrierPhoneTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.carrierPhoneTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.carrierPhoneTextBox.Name = "carrierPhoneTextBox";
             this.carrierPhoneTextBox.Size = new System.Drawing.Size(78, 20);
             this.carrierPhoneTextBox.TabIndex = 24;
@@ -556,7 +574,7 @@
             // carrierRepresenativeTextBox
             // 
             this.carrierRepresenativeTextBox.Location = new System.Drawing.Point(127, 111);
-            this.carrierRepresenativeTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.carrierRepresenativeTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.carrierRepresenativeTextBox.Name = "carrierRepresenativeTextBox";
             this.carrierRepresenativeTextBox.Size = new System.Drawing.Size(207, 20);
             this.carrierRepresenativeTextBox.TabIndex = 23;
@@ -564,7 +582,7 @@
             // carrierZipTextBox
             // 
             this.carrierZipTextBox.Location = new System.Drawing.Point(259, 88);
-            this.carrierZipTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.carrierZipTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.carrierZipTextBox.Name = "carrierZipTextBox";
             this.carrierZipTextBox.Size = new System.Drawing.Size(76, 20);
             this.carrierZipTextBox.TabIndex = 22;
@@ -572,7 +590,7 @@
             // carrierStateTextBox
             // 
             this.carrierStateTextBox.Location = new System.Drawing.Point(169, 87);
-            this.carrierStateTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.carrierStateTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.carrierStateTextBox.Name = "carrierStateTextBox";
             this.carrierStateTextBox.Size = new System.Drawing.Size(56, 20);
             this.carrierStateTextBox.TabIndex = 21;
@@ -580,7 +598,7 @@
             // carrierCityTextBox
             // 
             this.carrierCityTextBox.Location = new System.Drawing.Point(55, 88);
-            this.carrierCityTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.carrierCityTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.carrierCityTextBox.Name = "carrierCityTextBox";
             this.carrierCityTextBox.Size = new System.Drawing.Size(74, 20);
             this.carrierCityTextBox.TabIndex = 20;
@@ -588,7 +606,7 @@
             // carrierAddressLine2TextBox
             // 
             this.carrierAddressLine2TextBox.Location = new System.Drawing.Point(55, 65);
-            this.carrierAddressLine2TextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.carrierAddressLine2TextBox.Margin = new System.Windows.Forms.Padding(1);
             this.carrierAddressLine2TextBox.Name = "carrierAddressLine2TextBox";
             this.carrierAddressLine2TextBox.Size = new System.Drawing.Size(280, 20);
             this.carrierAddressLine2TextBox.TabIndex = 27;
@@ -596,7 +614,7 @@
             // carrierAddressLine1TextBox
             // 
             this.carrierAddressLine1TextBox.Location = new System.Drawing.Point(55, 41);
-            this.carrierAddressLine1TextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.carrierAddressLine1TextBox.Margin = new System.Windows.Forms.Padding(1);
             this.carrierAddressLine1TextBox.Name = "carrierAddressLine1TextBox";
             this.carrierAddressLine1TextBox.Size = new System.Drawing.Size(280, 20);
             this.carrierAddressLine1TextBox.TabIndex = 26;
@@ -674,7 +692,7 @@
             // carrierNameTextBox
             // 
             this.carrierNameTextBox.Location = new System.Drawing.Point(55, 14);
-            this.carrierNameTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.carrierNameTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.carrierNameTextBox.Name = "carrierNameTextBox";
             this.carrierNameTextBox.Size = new System.Drawing.Size(280, 20);
             this.carrierNameTextBox.TabIndex = 25;
@@ -732,9 +750,9 @@
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.firstName);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(1);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(1);
             this.tabPage1.Size = new System.Drawing.Size(349, 268);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Client";
@@ -743,7 +761,7 @@
             // clientMontlyLimitTextBox
             // 
             this.clientMontlyLimitTextBox.Location = new System.Drawing.Point(303, 239);
-            this.clientMontlyLimitTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.clientMontlyLimitTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.clientMontlyLimitTextBox.Name = "clientMontlyLimitTextBox";
             this.clientMontlyLimitTextBox.Size = new System.Drawing.Size(36, 20);
             this.clientMontlyLimitTextBox.TabIndex = 23;
@@ -751,7 +769,7 @@
             // clientServicePeriodTextBox
             // 
             this.clientServicePeriodTextBox.Location = new System.Drawing.Point(194, 240);
-            this.clientServicePeriodTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.clientServicePeriodTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.clientServicePeriodTextBox.Name = "clientServicePeriodTextBox";
             this.clientServicePeriodTextBox.Size = new System.Drawing.Size(28, 20);
             this.clientServicePeriodTextBox.TabIndex = 22;
@@ -759,7 +777,7 @@
             // clientSeriveLimitTextBox
             // 
             this.clientSeriveLimitTextBox.Location = new System.Drawing.Point(80, 239);
-            this.clientSeriveLimitTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.clientSeriveLimitTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.clientSeriveLimitTextBox.Name = "clientSeriveLimitTextBox";
             this.clientSeriveLimitTextBox.Size = new System.Drawing.Size(40, 20);
             this.clientSeriveLimitTextBox.TabIndex = 21;
@@ -798,7 +816,7 @@
             // clientEmpCodeTextBox
             // 
             this.clientEmpCodeTextBox.Location = new System.Drawing.Point(254, 182);
-            this.clientEmpCodeTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.clientEmpCodeTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.clientEmpCodeTextBox.Name = "clientEmpCodeTextBox";
             this.clientEmpCodeTextBox.Size = new System.Drawing.Size(85, 20);
             this.clientEmpCodeTextBox.TabIndex = 18;
@@ -816,7 +834,7 @@
             // clientPIFielddateTimePicker
             // 
             this.clientPIFielddateTimePicker.Location = new System.Drawing.Point(254, 215);
-            this.clientPIFielddateTimePicker.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.clientPIFielddateTimePicker.Margin = new System.Windows.Forms.Padding(1);
             this.clientPIFielddateTimePicker.Name = "clientPIFielddateTimePicker";
             this.clientPIFielddateTimePicker.Size = new System.Drawing.Size(85, 20);
             this.clientPIFielddateTimePicker.TabIndex = 20;
@@ -834,7 +852,7 @@
             // clientDateInjureddateTimePicker
             // 
             this.clientDateInjureddateTimePicker.Location = new System.Drawing.Point(84, 212);
-            this.clientDateInjureddateTimePicker.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.clientDateInjureddateTimePicker.Margin = new System.Windows.Forms.Padding(1);
             this.clientDateInjureddateTimePicker.Name = "clientDateInjureddateTimePicker";
             this.clientDateInjureddateTimePicker.Size = new System.Drawing.Size(85, 20);
             this.clientDateInjureddateTimePicker.TabIndex = 19;
@@ -852,7 +870,7 @@
             // clientClaimNumberTextBox
             // 
             this.clientClaimNumberTextBox.Location = new System.Drawing.Point(84, 184);
-            this.clientClaimNumberTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.clientClaimNumberTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.clientClaimNumberTextBox.Name = "clientClaimNumberTextBox";
             this.clientClaimNumberTextBox.Size = new System.Drawing.Size(85, 20);
             this.clientClaimNumberTextBox.TabIndex = 17;
@@ -870,7 +888,7 @@
             // clientInsuredTextBox
             // 
             this.clientInsuredTextBox.Location = new System.Drawing.Point(53, 161);
-            this.clientInsuredTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.clientInsuredTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.clientInsuredTextBox.Name = "clientInsuredTextBox";
             this.clientInsuredTextBox.Size = new System.Drawing.Size(116, 20);
             this.clientInsuredTextBox.TabIndex = 16;
@@ -888,7 +906,7 @@
             // clientAvgWklyWageTextBox
             // 
             this.clientAvgWklyWageTextBox.Location = new System.Drawing.Point(261, 136);
-            this.clientAvgWklyWageTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.clientAvgWklyWageTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.clientAvgWklyWageTextBox.Name = "clientAvgWklyWageTextBox";
             this.clientAvgWklyWageTextBox.Size = new System.Drawing.Size(78, 20);
             this.clientAvgWklyWageTextBox.TabIndex = 15;
@@ -907,7 +925,7 @@
             // clientDateBirthTextBox
             // 
             this.clientDateBirthTextBox.Location = new System.Drawing.Point(82, 136);
-            this.clientDateBirthTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.clientDateBirthTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.clientDateBirthTextBox.Name = "clientDateBirthTextBox";
             this.clientDateBirthTextBox.Size = new System.Drawing.Size(86, 20);
             this.clientDateBirthTextBox.TabIndex = 14;
@@ -926,7 +944,7 @@
             // clientWorkPhoneTextBox
             // 
             this.clientWorkPhoneTextBox.Location = new System.Drawing.Point(252, 107);
-            this.clientWorkPhoneTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.clientWorkPhoneTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.clientWorkPhoneTextBox.Name = "clientWorkPhoneTextBox";
             this.clientWorkPhoneTextBox.Size = new System.Drawing.Size(86, 20);
             this.clientWorkPhoneTextBox.TabIndex = 13;
@@ -934,7 +952,7 @@
             // clientHomePhoneTextBox
             // 
             this.clientHomePhoneTextBox.Location = new System.Drawing.Point(82, 109);
-            this.clientHomePhoneTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.clientHomePhoneTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.clientHomePhoneTextBox.Name = "clientHomePhoneTextBox";
             this.clientHomePhoneTextBox.Size = new System.Drawing.Size(86, 20);
             this.clientHomePhoneTextBox.TabIndex = 12;
@@ -942,7 +960,7 @@
             // clientZipTextBox
             // 
             this.clientZipTextBox.Location = new System.Drawing.Point(261, 83);
-            this.clientZipTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.clientZipTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.clientZipTextBox.Name = "clientZipTextBox";
             this.clientZipTextBox.Size = new System.Drawing.Size(78, 20);
             this.clientZipTextBox.TabIndex = 11;
@@ -951,7 +969,7 @@
             // clientStateTextBox
             // 
             this.clientStateTextBox.Location = new System.Drawing.Point(194, 81);
-            this.clientStateTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.clientStateTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.clientStateTextBox.Name = "clientStateTextBox";
             this.clientStateTextBox.Size = new System.Drawing.Size(40, 20);
             this.clientStateTextBox.TabIndex = 10;
@@ -959,7 +977,7 @@
             // clientCityTextBox
             // 
             this.clientCityTextBox.Location = new System.Drawing.Point(53, 82);
-            this.clientCityTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.clientCityTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.clientCityTextBox.Name = "clientCityTextBox";
             this.clientCityTextBox.Size = new System.Drawing.Size(104, 20);
             this.clientCityTextBox.TabIndex = 9;
@@ -967,7 +985,7 @@
             // clientLastNameTextBox
             // 
             this.clientLastNameTextBox.Location = new System.Drawing.Point(199, 15);
-            this.clientLastNameTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.clientLastNameTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.clientLastNameTextBox.Name = "clientLastNameTextBox";
             this.clientLastNameTextBox.Size = new System.Drawing.Size(139, 20);
             this.clientLastNameTextBox.TabIndex = 6;
@@ -975,7 +993,7 @@
             // clientFirstNameTextBox
             // 
             this.clientFirstNameTextBox.Location = new System.Drawing.Point(53, 16);
-            this.clientFirstNameTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.clientFirstNameTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.clientFirstNameTextBox.Name = "clientFirstNameTextBox";
             this.clientFirstNameTextBox.Size = new System.Drawing.Size(104, 20);
             this.clientFirstNameTextBox.TabIndex = 5;
@@ -983,7 +1001,7 @@
             // clientAddressLine1TextBox
             // 
             this.clientAddressLine1TextBox.Location = new System.Drawing.Point(53, 37);
-            this.clientAddressLine1TextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.clientAddressLine1TextBox.Margin = new System.Windows.Forms.Padding(1);
             this.clientAddressLine1TextBox.Name = "clientAddressLine1TextBox";
             this.clientAddressLine1TextBox.Size = new System.Drawing.Size(286, 20);
             this.clientAddressLine1TextBox.TabIndex = 7;
@@ -991,7 +1009,7 @@
             // clientAddressLine2TextBox
             // 
             this.clientAddressLine2TextBox.Location = new System.Drawing.Point(53, 58);
-            this.clientAddressLine2TextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.clientAddressLine2TextBox.Margin = new System.Windows.Forms.Padding(1);
             this.clientAddressLine2TextBox.Name = "clientAddressLine2TextBox";
             this.clientAddressLine2TextBox.Size = new System.Drawing.Size(286, 20);
             this.clientAddressLine2TextBox.TabIndex = 8;
@@ -1105,7 +1123,7 @@
             this.clientTabControl.Controls.Add(this.qrcTabPage);
             this.clientTabControl.Controls.Add(this.employerTabPag);
             this.clientTabControl.Location = new System.Drawing.Point(17, 95);
-            this.clientTabControl.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.clientTabControl.Margin = new System.Windows.Forms.Padding(1);
             this.clientTabControl.Name = "clientTabControl";
             this.clientTabControl.SelectedIndex = 0;
             this.clientTabControl.Size = new System.Drawing.Size(357, 294);
@@ -1135,9 +1153,9 @@
             this.doctotTabPage.Controls.Add(this.label33);
             this.doctotTabPage.Controls.Add(this.label32);
             this.doctotTabPage.Location = new System.Drawing.Point(4, 22);
-            this.doctotTabPage.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.doctotTabPage.Margin = new System.Windows.Forms.Padding(1);
             this.doctotTabPage.Name = "doctotTabPage";
-            this.doctotTabPage.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.doctotTabPage.Padding = new System.Windows.Forms.Padding(1);
             this.doctotTabPage.Size = new System.Drawing.Size(349, 268);
             this.doctotTabPage.TabIndex = 3;
             this.doctotTabPage.Text = "Doctor";
@@ -1147,7 +1165,7 @@
             // doctorClinicTextBox
             // 
             this.doctorClinicTextBox.Location = new System.Drawing.Point(58, 16);
-            this.doctorClinicTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.doctorClinicTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.doctorClinicTextBox.Name = "doctorClinicTextBox";
             this.doctorClinicTextBox.Size = new System.Drawing.Size(280, 20);
             this.doctorClinicTextBox.TabIndex = 36;
@@ -1165,7 +1183,7 @@
             // doctorFaxTextBox
             // 
             this.doctorFaxTextBox.Location = new System.Drawing.Point(267, 133);
-            this.doctorFaxTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.doctorFaxTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.doctorFaxTextBox.Name = "doctorFaxTextBox";
             this.doctorFaxTextBox.Size = new System.Drawing.Size(72, 20);
             this.doctorFaxTextBox.TabIndex = 34;
@@ -1174,7 +1192,7 @@
             // doctorPhoneTextBox
             // 
             this.doctorPhoneTextBox.Location = new System.Drawing.Point(91, 133);
-            this.doctorPhoneTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.doctorPhoneTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.doctorPhoneTextBox.Name = "doctorPhoneTextBox";
             this.doctorPhoneTextBox.Size = new System.Drawing.Size(72, 20);
             this.doctorPhoneTextBox.TabIndex = 32;
@@ -1183,7 +1201,7 @@
             // doctorZipTextBox
             // 
             this.doctorZipTextBox.Location = new System.Drawing.Point(258, 109);
-            this.doctorZipTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.doctorZipTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.doctorZipTextBox.Name = "doctorZipTextBox";
             this.doctorZipTextBox.Size = new System.Drawing.Size(81, 20);
             this.doctorZipTextBox.TabIndex = 31;
@@ -1192,7 +1210,7 @@
             // doctorStateTextBox
             // 
             this.doctorStateTextBox.Location = new System.Drawing.Point(174, 109);
-            this.doctorStateTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.doctorStateTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.doctorStateTextBox.Name = "doctorStateTextBox";
             this.doctorStateTextBox.Size = new System.Drawing.Size(42, 20);
             this.doctorStateTextBox.TabIndex = 30;
@@ -1201,7 +1219,7 @@
             // doctorCityTextBox
             // 
             this.doctorCityTextBox.Location = new System.Drawing.Point(58, 109);
-            this.doctorCityTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.doctorCityTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.doctorCityTextBox.Name = "doctorCityTextBox";
             this.doctorCityTextBox.Size = new System.Drawing.Size(84, 20);
             this.doctorCityTextBox.TabIndex = 29;
@@ -1210,7 +1228,7 @@
             // doctorAddressLine2TextBox
             // 
             this.doctorAddressLine2TextBox.Location = new System.Drawing.Point(58, 85);
-            this.doctorAddressLine2TextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.doctorAddressLine2TextBox.Margin = new System.Windows.Forms.Padding(1);
             this.doctorAddressLine2TextBox.Name = "doctorAddressLine2TextBox";
             this.doctorAddressLine2TextBox.Size = new System.Drawing.Size(280, 20);
             this.doctorAddressLine2TextBox.TabIndex = 28;
@@ -1219,7 +1237,7 @@
             // doctorAdressLine1TextBox
             // 
             this.doctorAdressLine1TextBox.Location = new System.Drawing.Point(58, 63);
-            this.doctorAdressLine1TextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.doctorAdressLine1TextBox.Margin = new System.Windows.Forms.Padding(1);
             this.doctorAdressLine1TextBox.Name = "doctorAdressLine1TextBox";
             this.doctorAdressLine1TextBox.Size = new System.Drawing.Size(280, 20);
             this.doctorAdressLine1TextBox.TabIndex = 27;
@@ -1228,7 +1246,7 @@
             // doctorLastNameTextBox
             // 
             this.doctorLastNameTextBox.Location = new System.Drawing.Point(214, 38);
-            this.doctorLastNameTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.doctorLastNameTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.doctorLastNameTextBox.Name = "doctorLastNameTextBox";
             this.doctorLastNameTextBox.Size = new System.Drawing.Size(125, 20);
             this.doctorLastNameTextBox.TabIndex = 26;
@@ -1237,7 +1255,7 @@
             // doctorFirstNameTextBox
             // 
             this.doctorFirstNameTextBox.Location = new System.Drawing.Point(58, 40);
-            this.doctorFirstNameTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.doctorFirstNameTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.doctorFirstNameTextBox.Name = "doctorFirstNameTextBox";
             this.doctorFirstNameTextBox.Size = new System.Drawing.Size(120, 20);
             this.doctorFirstNameTextBox.TabIndex = 25;
@@ -1369,9 +1387,9 @@
             this.qrcTabPage.Controls.Add(this.label43);
             this.qrcTabPage.Controls.Add(this.label42);
             this.qrcTabPage.Location = new System.Drawing.Point(4, 22);
-            this.qrcTabPage.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.qrcTabPage.Margin = new System.Windows.Forms.Padding(1);
             this.qrcTabPage.Name = "qrcTabPage";
-            this.qrcTabPage.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.qrcTabPage.Padding = new System.Windows.Forms.Padding(1);
             this.qrcTabPage.Size = new System.Drawing.Size(349, 268);
             this.qrcTabPage.TabIndex = 4;
             this.qrcTabPage.Text = "QRC";
@@ -1381,7 +1399,7 @@
             // qrcProviderRegNumTextBox
             // 
             this.qrcProviderRegNumTextBox.Location = new System.Drawing.Point(135, 193);
-            this.qrcProviderRegNumTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.qrcProviderRegNumTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.qrcProviderRegNumTextBox.Name = "qrcProviderRegNumTextBox";
             this.qrcProviderRegNumTextBox.Size = new System.Drawing.Size(199, 20);
             this.qrcProviderRegNumTextBox.TabIndex = 38;
@@ -1399,7 +1417,7 @@
             // qrcReferralSourcePersonTextBox
             // 
             this.qrcReferralSourcePersonTextBox.Location = new System.Drawing.Point(135, 164);
-            this.qrcReferralSourcePersonTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.qrcReferralSourcePersonTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.qrcReferralSourcePersonTextBox.Name = "qrcReferralSourcePersonTextBox";
             this.qrcReferralSourcePersonTextBox.Size = new System.Drawing.Size(199, 20);
             this.qrcReferralSourcePersonTextBox.TabIndex = 36;
@@ -1418,7 +1436,7 @@
             // qrcFacTextBox
             // 
             this.qrcFacTextBox.Location = new System.Drawing.Point(66, 138);
-            this.qrcFacTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.qrcFacTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.qrcFacTextBox.Name = "qrcFacTextBox";
             this.qrcFacTextBox.Size = new System.Drawing.Size(76, 20);
             this.qrcFacTextBox.TabIndex = 34;
@@ -1426,7 +1444,7 @@
             // qrcWorkPhoneTextBox
             // 
             this.qrcWorkPhoneTextBox.Location = new System.Drawing.Point(258, 112);
-            this.qrcWorkPhoneTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.qrcWorkPhoneTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.qrcWorkPhoneTextBox.Name = "qrcWorkPhoneTextBox";
             this.qrcWorkPhoneTextBox.Size = new System.Drawing.Size(76, 20);
             this.qrcWorkPhoneTextBox.TabIndex = 33;
@@ -1434,7 +1452,7 @@
             // qrcHomePhoneTextBox
             // 
             this.qrcHomePhoneTextBox.Location = new System.Drawing.Point(87, 112);
-            this.qrcHomePhoneTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.qrcHomePhoneTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.qrcHomePhoneTextBox.Name = "qrcHomePhoneTextBox";
             this.qrcHomePhoneTextBox.Size = new System.Drawing.Size(76, 20);
             this.qrcHomePhoneTextBox.TabIndex = 32;
@@ -1442,7 +1460,7 @@
             // qrcStateTextBox
             // 
             this.qrcStateTextBox.Location = new System.Drawing.Point(178, 86);
-            this.qrcStateTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.qrcStateTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.qrcStateTextBox.Name = "qrcStateTextBox";
             this.qrcStateTextBox.Size = new System.Drawing.Size(40, 20);
             this.qrcStateTextBox.TabIndex = 31;
@@ -1450,7 +1468,7 @@
             // qrcZipTextBox
             // 
             this.qrcZipTextBox.Location = new System.Drawing.Point(258, 86);
-            this.qrcZipTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.qrcZipTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.qrcZipTextBox.Name = "qrcZipTextBox";
             this.qrcZipTextBox.Size = new System.Drawing.Size(76, 20);
             this.qrcZipTextBox.TabIndex = 30;
@@ -1458,7 +1476,7 @@
             // qrcCityTextBox
             // 
             this.qrcCityTextBox.Location = new System.Drawing.Point(66, 86);
-            this.qrcCityTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.qrcCityTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.qrcCityTextBox.Name = "qrcCityTextBox";
             this.qrcCityTextBox.Size = new System.Drawing.Size(80, 20);
             this.qrcCityTextBox.TabIndex = 29;
@@ -1466,7 +1484,7 @@
             // qrcAddressLine2TextBox
             // 
             this.qrcAddressLine2TextBox.Location = new System.Drawing.Point(66, 59);
-            this.qrcAddressLine2TextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.qrcAddressLine2TextBox.Margin = new System.Windows.Forms.Padding(1);
             this.qrcAddressLine2TextBox.Name = "qrcAddressLine2TextBox";
             this.qrcAddressLine2TextBox.Size = new System.Drawing.Size(269, 20);
             this.qrcAddressLine2TextBox.TabIndex = 28;
@@ -1474,7 +1492,7 @@
             // qrcAddressLine1TextBox
             // 
             this.qrcAddressLine1TextBox.Location = new System.Drawing.Point(66, 36);
-            this.qrcAddressLine1TextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.qrcAddressLine1TextBox.Margin = new System.Windows.Forms.Padding(1);
             this.qrcAddressLine1TextBox.Name = "qrcAddressLine1TextBox";
             this.qrcAddressLine1TextBox.Size = new System.Drawing.Size(269, 20);
             this.qrcAddressLine1TextBox.TabIndex = 27;
@@ -1482,7 +1500,7 @@
             // qrcLastNameTextBox
             // 
             this.qrcLastNameTextBox.Location = new System.Drawing.Point(221, 10);
-            this.qrcLastNameTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.qrcLastNameTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.qrcLastNameTextBox.Name = "qrcLastNameTextBox";
             this.qrcLastNameTextBox.Size = new System.Drawing.Size(113, 20);
             this.qrcLastNameTextBox.TabIndex = 26;
@@ -1490,7 +1508,7 @@
             // qrcFirstNameTextBox
             // 
             this.qrcFirstNameTextBox.Location = new System.Drawing.Point(66, 12);
-            this.qrcFirstNameTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.qrcFirstNameTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.qrcFirstNameTextBox.Name = "qrcFirstNameTextBox";
             this.qrcFirstNameTextBox.Size = new System.Drawing.Size(116, 20);
             this.qrcFirstNameTextBox.TabIndex = 25;
@@ -1616,9 +1634,9 @@
             this.employerTabPag.Controls.Add(this.label69);
             this.employerTabPag.Controls.Add(this.label67);
             this.employerTabPag.Location = new System.Drawing.Point(4, 22);
-            this.employerTabPag.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.employerTabPag.Margin = new System.Windows.Forms.Padding(1);
             this.employerTabPag.Name = "employerTabPag";
-            this.employerTabPag.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.employerTabPag.Padding = new System.Windows.Forms.Padding(1);
             this.employerTabPag.Size = new System.Drawing.Size(349, 268);
             this.employerTabPag.TabIndex = 5;
             this.employerTabPag.Text = "Employer";
@@ -1628,7 +1646,7 @@
             // employerContactTextBox
             // 
             this.employerContactTextBox.Location = new System.Drawing.Point(66, 161);
-            this.employerContactTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.employerContactTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.employerContactTextBox.Name = "employerContactTextBox";
             this.employerContactTextBox.Size = new System.Drawing.Size(262, 20);
             this.employerContactTextBox.TabIndex = 36;
@@ -1636,7 +1654,7 @@
             // employerFaxTextBox
             // 
             this.employerFaxTextBox.Location = new System.Drawing.Point(261, 121);
-            this.employerFaxTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.employerFaxTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.employerFaxTextBox.Name = "employerFaxTextBox";
             this.employerFaxTextBox.Size = new System.Drawing.Size(67, 20);
             this.employerFaxTextBox.TabIndex = 35;
@@ -1644,7 +1662,7 @@
             // employerPhoneTextBox
             // 
             this.employerPhoneTextBox.Location = new System.Drawing.Point(99, 121);
-            this.employerPhoneTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.employerPhoneTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.employerPhoneTextBox.Name = "employerPhoneTextBox";
             this.employerPhoneTextBox.Size = new System.Drawing.Size(67, 20);
             this.employerPhoneTextBox.TabIndex = 33;
@@ -1652,7 +1670,7 @@
             // employerZipTextBox
             // 
             this.employerZipTextBox.Location = new System.Drawing.Point(239, 89);
-            this.employerZipTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.employerZipTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.employerZipTextBox.Name = "employerZipTextBox";
             this.employerZipTextBox.Size = new System.Drawing.Size(89, 20);
             this.employerZipTextBox.TabIndex = 32;
@@ -1660,7 +1678,7 @@
             // employerStateTextBox
             // 
             this.employerStateTextBox.Location = new System.Drawing.Point(178, 89);
-            this.employerStateTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.employerStateTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.employerStateTextBox.Name = "employerStateTextBox";
             this.employerStateTextBox.Size = new System.Drawing.Size(32, 20);
             this.employerStateTextBox.TabIndex = 31;
@@ -1668,7 +1686,7 @@
             // employerCityTextBox
             // 
             this.employerCityTextBox.Location = new System.Drawing.Point(61, 88);
-            this.employerCityTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.employerCityTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.employerCityTextBox.Name = "employerCityTextBox";
             this.employerCityTextBox.Size = new System.Drawing.Size(74, 20);
             this.employerCityTextBox.TabIndex = 30;
@@ -1676,7 +1694,7 @@
             // EmployerAddressLine2TextBox
             // 
             this.EmployerAddressLine2TextBox.Location = new System.Drawing.Point(61, 65);
-            this.EmployerAddressLine2TextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.EmployerAddressLine2TextBox.Margin = new System.Windows.Forms.Padding(1);
             this.EmployerAddressLine2TextBox.Name = "EmployerAddressLine2TextBox";
             this.EmployerAddressLine2TextBox.Size = new System.Drawing.Size(267, 20);
             this.EmployerAddressLine2TextBox.TabIndex = 29;
@@ -1684,7 +1702,7 @@
             // employerAddressLine1TextBox
             // 
             this.employerAddressLine1TextBox.Location = new System.Drawing.Point(61, 39);
-            this.employerAddressLine1TextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.employerAddressLine1TextBox.Margin = new System.Windows.Forms.Padding(1);
             this.employerAddressLine1TextBox.Name = "employerAddressLine1TextBox";
             this.employerAddressLine1TextBox.Size = new System.Drawing.Size(267, 20);
             this.employerAddressLine1TextBox.TabIndex = 28;
@@ -1692,7 +1710,7 @@
             // employerNameTextBox
             // 
             this.employerNameTextBox.Location = new System.Drawing.Point(61, 16);
-            this.employerNameTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.employerNameTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.employerNameTextBox.Name = "employerNameTextBox";
             this.employerNameTextBox.Size = new System.Drawing.Size(267, 20);
             this.employerNameTextBox.TabIndex = 26;
@@ -1833,7 +1851,7 @@
             // fileNumberTextBox
             // 
             this.fileNumberTextBox.Location = new System.Drawing.Point(108, 27);
-            this.fileNumberTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.fileNumberTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.fileNumberTextBox.Name = "fileNumberTextBox";
             this.fileNumberTextBox.Size = new System.Drawing.Size(58, 20);
             this.fileNumberTextBox.TabIndex = 0;
@@ -1841,7 +1859,7 @@
             // suspendInvoiceTextBox
             // 
             this.suspendInvoiceTextBox.Location = new System.Drawing.Point(108, 53);
-            this.suspendInvoiceTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.suspendInvoiceTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.suspendInvoiceTextBox.Name = "suspendInvoiceTextBox";
             this.suspendInvoiceTextBox.Size = new System.Drawing.Size(40, 20);
             this.suspendInvoiceTextBox.TabIndex = 2;
@@ -1850,7 +1868,7 @@
             // serviceBeginDateTimePicker
             // 
             this.serviceBeginDateTimePicker.Location = new System.Drawing.Point(288, 30);
-            this.serviceBeginDateTimePicker.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.serviceBeginDateTimePicker.Margin = new System.Windows.Forms.Padding(1);
             this.serviceBeginDateTimePicker.Name = "serviceBeginDateTimePicker";
             this.serviceBeginDateTimePicker.Size = new System.Drawing.Size(78, 20);
             this.serviceBeginDateTimePicker.TabIndex = 1;
@@ -1858,28 +1876,10 @@
             // difficultyRatingTextBox
             // 
             this.difficultyRatingTextBox.Location = new System.Drawing.Point(288, 52);
-            this.difficultyRatingTextBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.difficultyRatingTextBox.Margin = new System.Windows.Forms.Padding(1);
             this.difficultyRatingTextBox.Name = "difficultyRatingTextBox";
             this.difficultyRatingTextBox.Size = new System.Drawing.Size(40, 20);
             this.difficultyRatingTextBox.TabIndex = 3;
-            // 
-            // label78
-            // 
-            this.label78.AutoSize = true;
-            this.label78.Location = new System.Drawing.Point(8, 187);
-            this.label78.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(70, 13);
-            this.label78.TabIndex = 32;
-            this.label78.Text = "Mileage Rate";
-            // 
-            // carrierMileageRateTextBox
-            // 
-            this.carrierMileageRateTextBox.Location = new System.Drawing.Point(89, 187);
-            this.carrierMileageRateTextBox.Margin = new System.Windows.Forms.Padding(1);
-            this.carrierMileageRateTextBox.Name = "carrierMileageRateTextBox";
-            this.carrierMileageRateTextBox.Size = new System.Drawing.Size(62, 20);
-            this.carrierMileageRateTextBox.TabIndex = 33;
             // 
             // NewClient
             // 
@@ -1897,7 +1897,7 @@
             this.Controls.Add(this.clientTabControl);
             this.Controls.Add(this.newClienButton);
             this.Controls.Add(this.middleName);
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "NewClient";
             this.Text = "New Client";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
