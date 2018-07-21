@@ -332,7 +332,49 @@ namespace Invoice
 
                 DataTable dt = clientInformation.extraData.subClientDataTable(s, startDate, endDate);
 
-                pdf.Make();
+
+                string[] codes = dt.AsEnumerable().Select(x => x.Field<string>("Service Code")).Distinct<string>().ToArray<string>();
+                double[] times = new double[codes.Length];
+                double[] billHours = new double[codes.Length];
+                double mileage = 0;
+                double totalExpense = 0;
+                double grandTotal = 0;
+
+
+                for (int i = 0; i < codes.Length; i++)
+                {
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        if (dr[3].Equals(codes[i].ToString()))
+                        {
+                            times[i] += Convert.ToDouble(dr[4]);
+                        }
+                    }
+
+                }
+
+                foreach (DataRow dr in dt.Rows)
+                {
+                    totalExpense += Convert.ToDouble(dr[7]);
+                    mileage += Convert.ToDouble(dr[5]);
+                }
+
+                // Bill hours
+
+                double hourRate = double.Parse(clientInformation.extraData.getClient(s).carrierBillingRate);
+
+            
+                for (int i = 0; i < codes.Length; i++)
+                {
+                    billHours[i] = times[i] * hourRate;
+                }
+
+                double totalBill = billHours.Sum();
+                double billmileage = double.Parse(clientInformation.extraData.getClient(s).carrierMillageRateDistance) * mileage;
+                grandTotal = billmileage + totalBill + totalExpense;
+
+                pdf.Make(s, dt, startDate.Date, endDate.Date, invDate.Date, codes, times, totalExpense, billHours, mileage, totalBill, billmileage, grandTotal);
+
             }
         }
     }

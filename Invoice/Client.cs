@@ -64,6 +64,7 @@ namespace Invoice
         public string empleeCode { get; set; }
         public DateTime dateInjured { get; set; }
         public DateTime datePlFile { get; set;}
+        public string clientInsured { get; set; }
         public string serviceLimit { get; set; }
         public string servicePeriodMonths { get; set; }
         public string monthlyLimit { get; set; }

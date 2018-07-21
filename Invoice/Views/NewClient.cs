@@ -50,6 +50,7 @@ namespace Invoice
                 client.clientDayBorn = clientDateBirthTextBox.Text;
                 client.clientClaimNumber = clientClaimNumberTextBox.Text;
                 client.empleeCode = clientEmpCodeTextBox.Text;
+                client.clientInsured = clientInsuredTextBox.Text;
                 client.dateInjured = clientDateInjureddateTimePicker.Value;
                 client.datePlFile = clientPIFielddateTimePicker.Value;
                 client.serviceLimit = clientSeriveLimitTextBox.Text;
