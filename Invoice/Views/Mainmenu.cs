@@ -14,7 +14,6 @@ namespace Invoice
         PDF pdf = new PDF();
         private double number;
 
-
         public Mainmenu()
         {
             InitializeComponent();
@@ -43,7 +42,6 @@ namespace Invoice
             var dialogResult = edit_window.ShowDialog();
             edit_window.Dispose();
         }
-
 
         private void FillListBox()
         {
@@ -113,8 +111,6 @@ namespace Invoice
             new_window.Dispose();
         }
 
-
-
         private void employeeRecordMaintentanceToolStripMenuItem_Click(object sender, EventArgs e)
         {
             employeeRecordMaintentance new_window = new employeeRecordMaintentance();
@@ -136,12 +132,6 @@ namespace Invoice
             new_window.Dispose();
         }
 
-        private void dateTimePicker4_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
         private void editClientInformationToolStripMenuItem_Click(object sender, EventArgs e)
         {
             EditClient new_window = new EditClient();
@@ -157,14 +147,12 @@ namespace Invoice
             new_window.Dispose();
         }
 
-
         private void activityFillData()
         {
 
             string s = this.ClientslistBox.Text;
             Client client = clientInformation.extraData.getClient(s);
         }
-
 
         private void addDailyActivity_Click(object sender, EventArgs e)
         {
@@ -199,8 +187,6 @@ namespace Invoice
             string r = this.deleteDailyActivityTextBox.Text;
 
             clientInformation.extraData.deleteRowClientDataTable(s, int.Parse(r));
-
-
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -211,9 +197,7 @@ namespace Invoice
         private void fileToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-        }
-
-        
+        }      
 
         private void generateInvoiceButton_Click(object sender, EventArgs e)
         {
@@ -234,8 +218,6 @@ namespace Invoice
                 double totalExpense = 0;
                 double grandTotal = 0;
                 string output;
-
-
 
                 for (int i = 0; i < codes.Length; i++)
                 {
@@ -294,8 +276,6 @@ namespace Invoice
             }
         }
 
-
-
         private void addSummaryStatus(string message)
         {
             this.summaryRichTextBox.Visible = true;
@@ -305,20 +285,9 @@ namespace Invoice
             this.summaryRichTextBox.Refresh();
         }
 
-
         private void clear()
         {
             this.summaryRichTextBox.Clear();
-        }
-
-        private void Mainmenu_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage3_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void printInvoiceButton_Click(object sender, EventArgs e)
@@ -378,9 +347,7 @@ namespace Invoice
 
             }
         }
-
-      
-
+     
         private void Mainmenu_FormClosing(object sender, FormClosingEventArgs e)
         {
            

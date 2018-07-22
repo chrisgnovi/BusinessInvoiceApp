@@ -711,7 +711,7 @@ namespace Invoice
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Invoice";
             this.tabPage3.UseVisualStyleBackColor = true;
-            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
+
             // 
             // groupBox6
             // 
@@ -793,8 +793,7 @@ namespace Invoice
             this.invoiceDateDateTimePicker.Name = "invoiceDateDateTimePicker";
             this.invoiceDateDateTimePicker.Size = new System.Drawing.Size(497, 38);
             this.invoiceDateDateTimePicker.TabIndex = 4;
-            this.invoiceDateDateTimePicker.ValueChanged += new System.EventHandler(this.dateTimePicker4_ValueChanged);
-            // 
+            
             // label8
             // 
             this.label8.AutoSize = true;
@@ -884,7 +883,6 @@ namespace Invoice
             this.Activated += new System.EventHandler(this.Mainmenu_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Mainmenu_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Mainmenu_FormClosed);
-            this.Load += new System.EventHandler(this.Mainmenu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);

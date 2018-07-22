@@ -18,20 +18,17 @@ namespace Invoice
 
         private const string DATA_FILENAME = "clientinformation.dat";
 
-
         public static ClientInformation Instance()
         {
             if (clientInformation == null)
             {
                 clientInformation = new ClientInformation();
             } 
-
             return clientInformation;
         } 
 
         private ClientInformation()
         {
-            
             // Create a Dictionary to store clients at runtime
             this.extraData = new ExtraData();
             this.formatter = new BinaryFormatter();
@@ -87,6 +84,5 @@ namespace Invoice
             } 
 
         } 
-
     }
 }

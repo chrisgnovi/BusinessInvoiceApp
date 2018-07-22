@@ -15,18 +15,16 @@ namespace Invoice
 {
     class PDF
     {
-
         ClientInformation clientInformation = ClientInformation.Instance();
 
-        public void Make(string nameClient, DataTable dt, DateTime actDateStart, DateTime actDateEnd, DateTime invDate, string[] codes, 
+        public void Make(string nameClient, DataTable dt, DateTime actDateStart, DateTime actDateEnd, DateTime invDate, string[] codes,
             double[] times, double totalExpense, double[] billHours, double mileage, double totalBill, double billmileage, double grandTotal)
         {
             try
             {
                 string s = nameClient;
                 Client c = clientInformation.extraData.getClient(s);
-
-
+            
                 FileStream fs = new FileStream("Chapter1_Example1.pdf", FileMode.Create, FileAccess.Write, FileShare.None);
 
                 Document document = new Document();
@@ -41,9 +39,7 @@ namespace Invoice
                 var bodyFont = FontFactory.GetFont("Arial", 10, Font.NORMAL);
                 var EmailFont = FontFactory.GetFont("Arial", 8, Font.NORMAL, BaseColor.BLUE);
                 BaseColor TabelHeaderBackGroundColor = WebColors.GetRGBColor("#EEEEEE");
-
-
-
+             
                 // Header 
                 {
                     PdfPTable headerT = new PdfPTable(3);
@@ -76,7 +72,6 @@ namespace Invoice
                     }
 
                     headerT.PaddingTop = 10F;
-
                     document.Add(headerT);
 
                 }
@@ -113,11 +108,9 @@ namespace Invoice
                                                             clientInformation.extraData.city + ", "  + clientInformation.extraData.state +"\n    Phone: " +  clientInformation.extraData.phone,
                                                             "Cost to date:\n    Current Firm\n    Total Bill: " };
 
-
                     foreach (string str in headerInfo)
                     {
-
-                        PdfPCell cell1 = new PdfPCell(new Phrase(str, boldTableFont));
+                                                PdfPCell cell1 = new PdfPCell(new Phrase(str, boldTableFont));
                         cell1.BackgroundColor = TabelHeaderBackGroundColor;
                         cell1.HorizontalAlignment = Element.ALIGN_LEFT;
                         headerT.AddCell(cell1);
@@ -142,8 +135,8 @@ namespace Invoice
                 {
                     Paragraph title = new Paragraph();
                     title.Font = bodyFont;
-                    title.Add("\nInsured: " +  c.clientInsured + "\n");
-                    title.Add("Date of Service Began: " + c.dateServiceBegin.Date.ToShortDateString()+ "\n");
+                    title.Add("\nInsured: " + c.clientInsured + "\n");
+                    title.Add("Date of Service Began: " + c.dateServiceBegin.Date.ToShortDateString() + "\n");
                     document.Add(title);
                 }
 
@@ -154,10 +147,8 @@ namespace Invoice
                     document.Add(title);
                 }
 
-
                 // Tabel 
                 {
-
                     //Create body table
                     PdfPTable itemTable = new PdfPTable(4);
 
@@ -190,31 +181,30 @@ namespace Invoice
 
                             var _phrase = new Phrase();
                             _phrase.Add(new Chunk(clientInformation.extraData.serviceCodeDic[codes[j]], bodyFont));
-                        
 
-                        PdfPCell descCell = new PdfPCell(_phrase);
-                        descCell.HorizontalAlignment = 0;
-                        descCell.PaddingLeft = 10f;
-                        descCell.Border = Rectangle.LEFT_BORDER | Rectangle.RIGHT_BORDER;
-                        itemTable.AddCell(descCell);
+                            PdfPCell descCell = new PdfPCell(_phrase);
+                            descCell.HorizontalAlignment = 0;
+                            descCell.PaddingLeft = 10f;
+                            descCell.Border = Rectangle.LEFT_BORDER | Rectangle.RIGHT_BORDER;
+                            itemTable.AddCell(descCell);
 
-                        PdfPCell qtyCell = new PdfPCell(new Phrase(codes[j].ToString(), bodyFont));
-                        qtyCell.HorizontalAlignment = 1;
-                        qtyCell.PaddingLeft = 10f;
-                        qtyCell.Border = Rectangle.LEFT_BORDER | Rectangle.RIGHT_BORDER;
-                        itemTable.AddCell(qtyCell);
+                            PdfPCell qtyCell = new PdfPCell(new Phrase(codes[j].ToString(), bodyFont));
+                            qtyCell.HorizontalAlignment = 1;
+                            qtyCell.PaddingLeft = 10f;
+                            qtyCell.Border = Rectangle.LEFT_BORDER | Rectangle.RIGHT_BORDER;
+                            itemTable.AddCell(qtyCell);
 
-                        PdfPCell amountCell = new PdfPCell(new Phrase(times[j].ToString(), bodyFont));
-                        amountCell.HorizontalAlignment = 1;
-                        amountCell.PaddingLeft = 10f;
-                        amountCell.Border = Rectangle.LEFT_BORDER | Rectangle.RIGHT_BORDER;
-                        itemTable.AddCell(amountCell);
+                            PdfPCell amountCell = new PdfPCell(new Phrase(times[j].ToString(), bodyFont));
+                            amountCell.HorizontalAlignment = 1;
+                            amountCell.PaddingLeft = 10f;
+                            amountCell.Border = Rectangle.LEFT_BORDER | Rectangle.RIGHT_BORDER;
+                            itemTable.AddCell(amountCell);
 
-                        PdfPCell totalamtCell = new PdfPCell(new Phrase("$" + billHours[j].ToString(), bodyFont));
-                        totalamtCell.HorizontalAlignment = 1;
-                        totalamtCell.Border = Rectangle.LEFT_BORDER | Rectangle.RIGHT_BORDER;
-                        itemTable.AddCell(totalamtCell);
-                    }
+                            PdfPCell totalamtCell = new PdfPCell(new Phrase("$" + billHours[j].ToString(), bodyFont));
+                            totalamtCell.HorizontalAlignment = 1;
+                            totalamtCell.Border = Rectangle.LEFT_BORDER | Rectangle.RIGHT_BORDER;
+                            itemTable.AddCell(totalamtCell);
+                        }
 
                     }
                     // Table footer
@@ -250,7 +240,7 @@ namespace Invoice
 
                     // Table footer
                     {
-                        PdfPCell totalAmtStrCell = new PdfPCell(new Phrase("Total Mileage - " + mileage.ToString()  + " @ " + c.carrierMillageRateDistance.ToString(), boldTableFont));
+                        PdfPCell totalAmtStrCell = new PdfPCell(new Phrase("Total Mileage - " + mileage.ToString() + " @ " + c.carrierMillageRateDistance.ToString(), boldTableFont));
                         totalAmtStrCell.Border = Rectangle.NO_BORDER;   //Rectangle.NO_BORDER; //Rectangle.TOP_BORDER;
                         totalAmtStrCell.HorizontalAlignment = 1;
                         totalAmtStrCell.Colspan = 2;
@@ -276,20 +266,16 @@ namespace Invoice
                         totalAmtCell.BackgroundColor = TabelHeaderBackGroundColor;
                         totalAmtCell.Border = Rectangle.NO_BORDER;
                         itemTable.AddCell(totalAmtCell);
-                        PdfPCell totalAmtCell3 = new PdfPCell(new Phrase( "$"+ grandTotal.ToString(), boldTableFont));
+                        PdfPCell totalAmtCell3 = new PdfPCell(new Phrase("$" + grandTotal.ToString(), boldTableFont));
                         totalAmtCell3.HorizontalAlignment = 1;
                         totalAmtCell3.BackgroundColor = TabelHeaderBackGroundColor;
                         totalAmtCell3.Border = Rectangle.NO_BORDER;
                         itemTable.AddCell(totalAmtCell3);
                     }
                     document.Add(itemTable);
-
-
                 }
 
-
                 document.NewPage();
-
 
                 // Header 
                 {
@@ -367,7 +353,6 @@ namespace Invoice
                     }
 
                     headerT.PaddingTop = 10F;
-
                     document.Add(headerT);
 
                 }
@@ -386,7 +371,6 @@ namespace Invoice
                     title.Font = FontFactory.GetFont("Arial", 18, Font.BOLD);
                     title.Add("\nVocational Rehabilitation Services");
                     document.Add(title);
-
                 }
 
                 // Space 
@@ -398,13 +382,12 @@ namespace Invoice
 
                 // Tabel 
                 {
-
                     //Create body table
                     PdfPTable itemTable = new PdfPTable(7);
 
                     itemTable.HorizontalAlignment = 0;
                     itemTable.WidthPercentage = 100;
-                    itemTable.SetWidths(new float[] { 5, 15, 40, 10, 10, 10, 10});  // then set the column's __relative__ widths
+                    itemTable.SetWidths(new float[] { 5, 15, 40, 10, 10, 10, 10 });  // then set the column's __relative__ widths
                     itemTable.SpacingAfter = 40;
                     itemTable.DefaultCell.Border = Rectangle.BOX;
                     PdfPCell cell1 = new PdfPCell(new Phrase("NO", boldTableFont));
@@ -440,71 +423,56 @@ namespace Invoice
                     foreach (DataRow row in dt.Rows)
                     {
 
+                        PdfPCell numberCell = new PdfPCell(new Phrase(i.ToString(), bodyFont));
+                        numberCell.HorizontalAlignment = 1;
+                        numberCell.PaddingLeft = 10f;
+                        itemTable.AddCell(numberCell);
 
-                            PdfPCell numberCell = new PdfPCell(new Phrase(i.ToString(), bodyFont));
-                            numberCell.HorizontalAlignment = 1;
-                            numberCell.PaddingLeft = 10f;
-                            itemTable.AddCell(numberCell);
+                        var _phrase = new Phrase();
+                        DateTime datetime = (DateTime)row[1];
+                        _phrase.Add(new Chunk(datetime.ToShortDateString(), bodyFont));
+                        PdfPCell descCell = new PdfPCell(_phrase);
+                        descCell.HorizontalAlignment = 1;
+                        descCell.PaddingLeft = 10f;
+                        itemTable.AddCell(descCell);
 
-                            var _phrase = new Phrase();
-                            DateTime datetime = (DateTime)row[1];
-                            _phrase.Add(new Chunk(datetime.ToShortDateString(), bodyFont));
-                            PdfPCell descCell = new PdfPCell(_phrase);
-                            descCell.HorizontalAlignment = 1;
-                            descCell.PaddingLeft = 10f;
-                            itemTable.AddCell(descCell);
+                        PdfPCell qtyCell;
+                        if (!row[3].Equals("")) { qtyCell = new PdfPCell(new Phrase(clientInformation.extraData.serviceCodeDic[row[3].ToString()], bodyFont)); }
+                        else { qtyCell = new PdfPCell(new Phrase("", bodyFont)); }
 
-                            PdfPCell qtyCell;
-                            if (!row[3].Equals("")) { qtyCell = new PdfPCell(new Phrase(clientInformation.extraData.serviceCodeDic[row[3].ToString()], bodyFont)); }
-                            else { qtyCell = new PdfPCell(new Phrase("", bodyFont)); }
+                        qtyCell.HorizontalAlignment = 1;
+                        qtyCell.PaddingLeft = 10f;
+                        itemTable.AddCell(qtyCell);
 
-                            qtyCell.HorizontalAlignment = 1;
-                            qtyCell.PaddingLeft = 10f;
-                            itemTable.AddCell(qtyCell);
+                        PdfPCell amountCell = new PdfPCell(new Phrase(row[3].ToString(), bodyFont));
+                        amountCell.HorizontalAlignment = 1;
+                        amountCell.PaddingLeft = 10f;
+                        itemTable.AddCell(amountCell);
 
+                        PdfPCell totalamtCell = new PdfPCell(new Phrase(row[4].ToString(), bodyFont));
+                        totalamtCell.HorizontalAlignment = 1;
+                        itemTable.AddCell(totalamtCell);
 
-                            PdfPCell amountCell = new PdfPCell(new Phrase(row[3].ToString(), bodyFont));
-                            amountCell.HorizontalAlignment = 1;
-                            amountCell.PaddingLeft = 10f;
-                            itemTable.AddCell(amountCell);
+                        PdfPCell mileageamtCell = new PdfPCell(new Phrase(row[5].ToString(), bodyFont));
+                        mileageamtCell.HorizontalAlignment = 1;
+                        itemTable.AddCell(mileageamtCell);
 
-                            PdfPCell totalamtCell = new PdfPCell(new Phrase(row[4].ToString(), bodyFont));
-                            totalamtCell.HorizontalAlignment = 1;
-                            itemTable.AddCell(totalamtCell);
+                        PdfPCell expamtCell = new PdfPCell(new Phrase(row[6].ToString(), bodyFont));
+                        expamtCell.HorizontalAlignment = 1;
+                        itemTable.AddCell(expamtCell);
 
-                            PdfPCell mileageamtCell = new PdfPCell(new Phrase(row[5].ToString(), bodyFont));
-                            mileageamtCell.HorizontalAlignment = 1;
-                            itemTable.AddCell(mileageamtCell);
-
-                            PdfPCell expamtCell = new PdfPCell(new Phrase(row[6].ToString(), bodyFont));
-                            expamtCell.HorizontalAlignment = 1;
-                            itemTable.AddCell(expamtCell);
-
-
-                            i++;
-
-                        
+                        i++;
                     }
-        
                     document.Add(itemTable);
-
-
                 }
-            
-
 
                 document.Close();
-           
                 System.Diagnostics.Process.Start("C:\\Users\\chris\\Documents\\Projects\\BusinessInvoiceApplication\\BusinessInvoiceApp\\Invoice\\bin\\Debug\\Chapter1_Example1.pdf");
             }
             catch
             {
 
             }
-   
         }
-
-
-
     }
 }

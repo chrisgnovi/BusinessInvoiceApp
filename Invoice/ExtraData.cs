@@ -250,7 +250,6 @@ namespace Invoice
             return keyList;
         }
 
-
         public Client getClient(string key)
         {
             if (clientDictionary.ContainsKey(key))
@@ -291,7 +290,6 @@ namespace Invoice
             }
             return null;
         }
-
 
         public void addRowClientDataTable(string key, DateTime dt, string disc, string code, double time, double mil, string excode, double amt)
         {
