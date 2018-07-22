@@ -1,6 +1,6 @@
 ﻿namespace Invoice.Views
 {
-    partial class addNewEmployeeRecord
+    partial class AddNewEmployeeRecord
     {
         /// <summary>
         /// Required designer variable.

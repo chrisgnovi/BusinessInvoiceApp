@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace Invoice.Views
 {
-    public partial class systemInformationMaintenance : Form
+    public partial class SystemInformationMaintenance : Form
     {
         ClientInformation cI = ClientInformation.Instance();
 
-        public systemInformationMaintenance()
+        public SystemInformationMaintenance()
         {
             InitializeComponent();
         }

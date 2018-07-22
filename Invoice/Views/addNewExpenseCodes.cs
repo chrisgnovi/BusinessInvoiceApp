@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace Invoice.Views
 {
-    public partial class addNewExpenseCodes : Form
+    public partial class AddNewExpenseCodes : Form
     {
 
         ClientInformation clientInformation = ClientInformation.Instance();
 
 
-        public addNewExpenseCodes()
+        public AddNewExpenseCodes()
         {
             InitializeComponent();
         }

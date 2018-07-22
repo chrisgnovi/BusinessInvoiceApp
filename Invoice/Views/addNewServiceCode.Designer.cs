@@ -1,6 +1,6 @@
 ﻿namespace Invoice.Views
 {
-    partial class addNewServiceCode
+    partial class AddNewServiceCode
     {
         /// <summary>
         /// Required designer variable.

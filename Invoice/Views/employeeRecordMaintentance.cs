@@ -25,7 +25,7 @@ namespace Invoice
 
         private void addEmloyeeRecordsButton_Click(object sender, EventArgs e)
         {
-            addNewEmployeeRecord new_window = new addNewEmployeeRecord();
+            AddNewEmployeeRecord new_window = new AddNewEmployeeRecord();
             var dialogResult = new_window.ShowDialog();
             new_window.Dispose();
         }

@@ -1,6 +1,6 @@
 ﻿namespace Invoice.Views
 {
-    partial class addNewExpenseCodes
+    partial class AddNewExpenseCodes
     {
         /// <summary>
         /// Required designer variable.

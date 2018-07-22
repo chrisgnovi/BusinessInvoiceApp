@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Invoice.Views
 {
-    public partial class addNewEmployeeRecord : Form
+    public partial class AddNewEmployeeRecord : Form
     {
-        public addNewEmployeeRecord()
+        public AddNewEmployeeRecord()
         {
             InitializeComponent();
         }

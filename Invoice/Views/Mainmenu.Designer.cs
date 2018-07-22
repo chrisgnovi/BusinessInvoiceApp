@@ -34,7 +34,6 @@ namespace Invoice
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editClientInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -143,8 +142,7 @@ namespace Invoice
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newToolStripMenuItem,
-            this.saveToolStripMenuItem});
+            this.newToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(75, 45);
             this.fileToolStripMenuItem.Text = "File";
@@ -156,13 +154,6 @@ namespace Invoice
             this.newToolStripMenuItem.Size = new System.Drawing.Size(396, 46);
             this.newToolStripMenuItem.Text = "New Client";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.NewToolStripMenuItem_Click);
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(396, 46);
-            this.saveToolStripMenuItem.Text = "Save";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -891,6 +882,8 @@ namespace Invoice
             this.Text = "Main Menu";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Activated += new System.EventHandler(this.Mainmenu_Activated);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Mainmenu_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Mainmenu_FormClosed);
             this.Load += new System.EventHandler(this.Mainmenu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -992,7 +985,6 @@ namespace Invoice
         private Label label11;
         private TextBox activityServiceDescriptionTextBox;
         private Label label12;
-        private ToolStripMenuItem saveToolStripMenuItem;
         private TextBox deleteDailyActivityTextBox;
         private RichTextBox summaryRichTextBox;
         private Label label14;

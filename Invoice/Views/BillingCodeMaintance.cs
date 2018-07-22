@@ -24,7 +24,7 @@ namespace Invoice.Views
 
         private void addENewExpenseCodesButton_Click(object sender, EventArgs e)
         {
-            addNewExpenseCodes new_window = new addNewExpenseCodes();
+            AddNewExpenseCodes new_window = new AddNewExpenseCodes();
             var dialogResult = new_window.ShowDialog();
             new_window.Dispose();
         }
@@ -38,7 +38,7 @@ namespace Invoice.Views
 
         private void AddNewServiceCodes_Click(object sender, EventArgs e)
         {
-            addNewServiceCode new_window = new addNewServiceCode();
+            AddNewServiceCode new_window = new AddNewServiceCode();
             var dialogResult = new_window.ShowDialog();
             new_window.Dispose();
         }

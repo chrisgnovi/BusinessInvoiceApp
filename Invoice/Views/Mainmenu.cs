@@ -5,6 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 using Invoice.Views;
 
+
 namespace Invoice
 {
     public partial class Mainmenu : Form
@@ -130,7 +131,7 @@ namespace Invoice
 
         private void systemInfomationMaintentanceToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            systemInformationMaintenance new_window = new systemInformationMaintenance();
+            SystemInformationMaintenance new_window = new SystemInformationMaintenance();
             var dialogResult = new_window.ShowDialog();
             new_window.Dispose();
         }
@@ -376,6 +377,37 @@ namespace Invoice
                 pdf.Make(s, dt, startDate.Date, endDate.Date, invDate.Date, codes, times, totalExpense, billHours, mileage, totalBill, billmileage, grandTotal);
 
             }
+        }
+
+      
+
+        private void Mainmenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+           
+
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult result = MessageBox.Show("Do you really want to exit?", "", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    
+                   
+                    Application.Exit();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void Mainmenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            clientInformation.Save();
         }
     }
 }

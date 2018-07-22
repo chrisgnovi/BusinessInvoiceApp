@@ -1,6 +1,6 @@
 ﻿namespace Invoice.Views
 {
-    partial class systemInformationMaintenance
+    partial class SystemInformationMaintenance
     {
         /// <summary>
         /// Required designer variable.

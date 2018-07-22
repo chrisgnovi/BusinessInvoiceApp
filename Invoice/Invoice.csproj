@@ -69,23 +69,23 @@
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
     <Compile Include="Employee.cs" />
-    <Compile Include="Views\addNewEmployeeRecord.cs">
+    <Compile Include="Views\AddNewEmployeeRecord.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\addNewEmployeeRecord.Designer.cs">
-      <DependentUpon>addNewEmployeeRecord.cs</DependentUpon>
+    <Compile Include="Views\AddNewEmployeeRecord.Designer.cs">
+      <DependentUpon>AddNewEmployeeRecord.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\addNewExpenseCodes.cs">
+    <Compile Include="Views\AddNewExpenseCodes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\addNewExpenseCodes.Designer.cs">
-      <DependentUpon>addNewExpenseCodes.cs</DependentUpon>
+    <Compile Include="Views\AddNewExpenseCodes.Designer.cs">
+      <DependentUpon>AddNewExpenseCodes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\addNewServiceCode.cs">
+    <Compile Include="Views\AddNewServiceCode.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\addNewServiceCode.Designer.cs">
-      <DependentUpon>addNewServiceCode.cs</DependentUpon>
+    <Compile Include="Views\AddNewServiceCode.Designer.cs">
+      <DependentUpon>AddNewServiceCode.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\BillingCodeMaintance.cs">
       <SubType>Form</SubType>
@@ -129,11 +129,11 @@
     <Compile Include="Views\DeleteServiceCodes.Designer.cs">
       <DependentUpon>DeleteServiceCodes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\employeeRecordMaintentance.cs">
+    <Compile Include="Views\EmployeeRecordMaintentance.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\employeeRecordMaintentance.Designer.cs">
-      <DependentUpon>employeeRecordMaintentance.cs</DependentUpon>
+    <Compile Include="Views\EmployeeRecordMaintentance.Designer.cs">
+      <DependentUpon>EmployeeRecordMaintentance.cs</DependentUpon>
     </Compile>
     <Compile Include="Client.cs" />
     <Compile Include="ClientInformation.cs" />
@@ -163,23 +163,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\systemInformationMaintenance.cs">
+    <Compile Include="Views\SystemInformationMaintenance.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\systemInformationMaintenance.Designer.cs">
-      <DependentUpon>systemInformationMaintenance.cs</DependentUpon>
+    <Compile Include="Views\SystemInformationMaintenance.Designer.cs">
+      <DependentUpon>SystemInformationMaintenance.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Views\About.resx">
       <DependentUpon>About.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\addNewEmployeeRecord.resx">
-      <DependentUpon>addNewEmployeeRecord.cs</DependentUpon>
+    <EmbeddedResource Include="Views\AddNewEmployeeRecord.resx">
+      <DependentUpon>AddNewEmployeeRecord.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\addNewExpenseCodes.resx">
-      <DependentUpon>addNewExpenseCodes.cs</DependentUpon>
+    <EmbeddedResource Include="Views\AddNewExpenseCodes.resx">
+      <DependentUpon>AddNewExpenseCodes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\addNewServiceCode.resx">
-      <DependentUpon>addNewServiceCode.cs</DependentUpon>
+    <EmbeddedResource Include="Views\AddNewServiceCode.resx">
+      <DependentUpon>AddNewServiceCode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\BillingCodeMaintance.resx">
       <DependentUpon>BillingCodeMaintance.cs</DependentUpon>
@@ -208,8 +208,8 @@
     <EmbeddedResource Include="Views\EditClient.resx">
       <DependentUpon>EditClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\employeeRecordMaintentance.resx">
-      <DependentUpon>employeeRecordMaintentance.cs</DependentUpon>
+    <EmbeddedResource Include="Views\EmployeeRecordMaintentance.resx">
+      <DependentUpon>EmployeeRecordMaintentance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Mainmenu.resx">
       <DependentUpon>Mainmenu.cs</DependentUpon>
@@ -226,8 +226,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Views\systemInformationMaintenance.resx">
-      <DependentUpon>systemInformationMaintenance.cs</DependentUpon>
+    <EmbeddedResource Include="Views\SystemInformationMaintenance.resx">
+      <DependentUpon>SystemInformationMaintenance.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

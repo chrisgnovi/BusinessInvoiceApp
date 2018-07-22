@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace Invoice.Views
 {
-    public partial class addNewServiceCode : Form
+    public partial class AddNewServiceCode : Form
     {
         ClientInformation clientInformation = ClientInformation.Instance();
 
-        public addNewServiceCode()
+        public AddNewServiceCode()
         {
             InitializeComponent();
         }
