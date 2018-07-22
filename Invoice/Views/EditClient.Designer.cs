@@ -190,9 +190,11 @@
             this.label70 = new System.Windows.Forms.Label();
             this.label69 = new System.Windows.Forms.Label();
             this.label67 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.editClientComboBox = new System.Windows.Forms.ComboBox();
             this.label78 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.editButton = new System.Windows.Forms.Button();
+            this.carrierMileageRateTextBox = new System.Windows.Forms.TextBox();
+            this.label79 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.clientTabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -663,6 +665,8 @@
             // 
             // carrierTabPage
             // 
+            this.carrierTabPage.Controls.Add(this.label79);
+            this.carrierTabPage.Controls.Add(this.carrierMileageRateTextBox);
             this.carrierTabPage.Controls.Add(this.carrierBillRatePercentTextBox);
             this.carrierTabPage.Controls.Add(this.label21);
             this.carrierTabPage.Controls.Add(this.label20);
@@ -1675,13 +1679,14 @@
             this.label67.TabIndex = 4;
             this.label67.Text = "Name";
             // 
-            // comboBox1
+            // editClientComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(34, 96);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(429, 39);
-            this.comboBox1.TabIndex = 25;
+            this.editClientComboBox.FormattingEnabled = true;
+            this.editClientComboBox.Location = new System.Drawing.Point(34, 96);
+            this.editClientComboBox.Name = "editClientComboBox";
+            this.editClientComboBox.Size = new System.Drawing.Size(429, 39);
+            this.editClientComboBox.TabIndex = 25;
+            this.editClientComboBox.SelectedValueChanged += new System.EventHandler(this.editClientComboBox_SelectedValueChanged);
             // 
             // label78
             // 
@@ -1692,27 +1697,46 @@
             this.label78.TabIndex = 26;
             this.label78.Text = "Select Client";
             // 
-            // button1
+            // editButton
             // 
-            this.button1.Location = new System.Drawing.Point(841, 82);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(191, 64);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "Edit";
-            this.button1.UseVisualStyleBackColor = true;
+            this.editButton.Location = new System.Drawing.Point(841, 82);
+            this.editButton.Name = "editButton";
+            this.editButton.Size = new System.Drawing.Size(191, 64);
+            this.editButton.TabIndex = 27;
+            this.editButton.Text = "Edit";
+            this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // carrierMileageRateTextBox
+            // 
+            this.carrierMileageRateTextBox.Location = new System.Drawing.Point(238, 438);
+            this.carrierMileageRateTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.carrierMileageRateTextBox.Name = "carrierMileageRateTextBox";
+            this.carrierMileageRateTextBox.Size = new System.Drawing.Size(159, 38);
+            this.carrierMileageRateTextBox.TabIndex = 34;
+            // 
+            // label79
+            // 
+            this.label79.AutoSize = true;
+            this.label79.Location = new System.Drawing.Point(20, 441);
+            this.label79.Name = "label79";
+            this.label79.Size = new System.Drawing.Size(183, 32);
+            this.label79.TabIndex = 35;
+            this.label79.Text = "Mileage Rate";
             // 
             // EditClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1069, 1141);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.editButton);
             this.Controls.Add(this.label78);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.editClientComboBox);
             this.Controls.Add(this.groupBox1);
             this.Name = "EditClient";
             this.Text = "Edit Client";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.Activated += new System.EventHandler(this.EditClient_Activated);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.clientTabControl.ResumeLayout(false);
@@ -1897,8 +1921,10 @@
         private System.Windows.Forms.Label label70;
         private System.Windows.Forms.Label label69;
         private System.Windows.Forms.Label label67;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox editClientComboBox;
         private System.Windows.Forms.Label label78;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button editButton;
+        private System.Windows.Forms.TextBox carrierMileageRateTextBox;
+        private System.Windows.Forms.Label label79;
     }
 }

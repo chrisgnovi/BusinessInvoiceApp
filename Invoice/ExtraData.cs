@@ -13,7 +13,7 @@ namespace Invoice
     public class ExtraData
     {
         //Dictionaries of information 
-        private Dictionary<string, Client> clientDictionary = new Dictionary<string, Client>();
+        public Dictionary<string, Client> clientDictionary = new Dictionary<string, Client>();
         private Dictionary<string, Employee> empDic = new Dictionary<string, Employee>();
         private Dictionary<string, string> expenseCodeDic = new Dictionary<string, string>();
         public Dictionary<string, string> serviceCodeDic = new Dictionary<string, string>();

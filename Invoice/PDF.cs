@@ -440,9 +440,7 @@ namespace Invoice
                     foreach (DataRow row in dt.Rows)
                     {
 
-                        
-                        
-      
+
                             PdfPCell numberCell = new PdfPCell(new Phrase(i.ToString(), bodyFont));
                             numberCell.HorizontalAlignment = 1;
                             numberCell.PaddingLeft = 10f;
@@ -463,8 +461,6 @@ namespace Invoice
                             qtyCell.HorizontalAlignment = 1;
                             qtyCell.PaddingLeft = 10f;
                             itemTable.AddCell(qtyCell);
-                        
-
 
 
                             PdfPCell amountCell = new PdfPCell(new Phrase(row[3].ToString(), bodyFont));
@@ -484,7 +480,9 @@ namespace Invoice
                             expamtCell.HorizontalAlignment = 1;
                             itemTable.AddCell(expamtCell);
 
+
                             i++;
+
                         
                     }
         
