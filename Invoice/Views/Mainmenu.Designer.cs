@@ -135,6 +135,7 @@ namespace Invoice
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.menuStrip1.Size = new System.Drawing.Size(2699, 49);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
@@ -151,7 +152,7 @@ namespace Invoice
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(396, 46);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(276, 46);
             this.newToolStripMenuItem.Text = "New Client";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.NewToolStripMenuItem_Click);
             // 
@@ -711,7 +712,6 @@ namespace Invoice
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Invoice";
             this.tabPage3.UseVisualStyleBackColor = true;
-
             // 
             // groupBox6
             // 
@@ -793,7 +793,7 @@ namespace Invoice
             this.invoiceDateDateTimePicker.Name = "invoiceDateDateTimePicker";
             this.invoiceDateDateTimePicker.Size = new System.Drawing.Size(497, 38);
             this.invoiceDateDateTimePicker.TabIndex = 4;
-            
+            // 
             // label8
             // 
             this.label8.AutoSize = true;

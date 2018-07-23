@@ -10,6 +10,7 @@ using iTextSharp.text.pdf;
 using System.Data;
 using static System.Net.Mime.MediaTypeNames;
 using iTextSharp.text.html;
+using System.Windows.Forms;
 
 namespace Invoice
 {
@@ -25,7 +26,7 @@ namespace Invoice
                 string s = nameClient;
                 Client c = clientInformation.extraData.getClient(s);
             
-                FileStream fs = new FileStream("Chapter1_Example1.pdf", FileMode.Create, FileAccess.Write, FileShare.None);
+                FileStream fs = new FileStream("invoice.pdf", FileMode.Create, FileAccess.Write, FileShare.None);
 
                 Document document = new Document();
 
@@ -467,7 +468,9 @@ namespace Invoice
                 }
 
                 document.Close();
-                System.Diagnostics.Process.Start("C:\\Users\\chris\\Documents\\Projects\\BusinessInvoiceApplication\\BusinessInvoiceApp\\Invoice\\bin\\Debug\\Chapter1_Example1.pdf");
+
+                string appPath = System.IO.Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath);
+                System.Diagnostics.Process.Start(appPath + "\\invoice.pdf");
             }
             catch
             {
