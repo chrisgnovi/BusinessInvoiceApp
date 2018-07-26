@@ -1,6 +1,6 @@
 # BusinessInvoiceApp
 
-This is a business invoice desktop application that I build using window forms in C#. The application autosaves itself and generates PDF invoice bills. I made it for a company but was required to publish my code since the PDF generation used iText 5.  
+This is a business invoice desktop application that I build using System.Windows.Forms in C#. The application autosaves itself and generates PDF invoice bills. I made it for a company but was required to publish my code since the PDF generation used iText 5.  
 
 [AGPL](https://itextpdf.com/AGPL)
 
